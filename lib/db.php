@@ -10,7 +10,7 @@ function fetchAll($sql){
     $arr = [];
     $res = mysqli_query($conn, $sql);
     if (!$res) {
-        echo 'Œ¯Ë·Í‡: '.mysqli_errno($conn).': '.mysqli_error($conn);
+        echo '–û—à–∏–±–∫–∞: '.mysqli_errno($conn).': '.mysqli_error($conn);
         exit();
     }
     if (mysqli_num_rows($res) == 0) {
@@ -28,7 +28,7 @@ function fetchOne($sql){
     global $conn;
     $res = mysqli_query($conn, $sql);
     if (!$res) {
-        echo 'Œ¯Ë·Í‡: '.mysqli_errno($conn).': '.mysqli_error($conn);
+        echo '–û—à–∏–±–∫–∞: '.mysqli_errno($conn).': '.mysqli_error($conn);
         exit();
     }
     if (mysqli_num_rows($res) == 0) {
