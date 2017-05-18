@@ -40,3 +40,23 @@ function fetchOne($sql){
         return $row;
     }
 }
+function InsertRow($sql){
+	global $conn;
+	$res = mysqli_query($conn, $sql);
+	if (!$res) {
+		echo 'Ошибка: '.mysqli_errno($conn).': '.mysqli_error($conn);
+	exit();
+	}
+	$id = mysqli_insert_id($conn);
+	return $id;
+}
+function UpdateRow($sql){
+	global $conn;
+	$res = mysqli_query($conn, $sql);
+	if (!$res) {
+		echo 'Ошибка: '.mysqli_errno($conn).': '.mysqli_error($conn);
+	exit();
+	}
+	$count = mysqli_affected_rows($conn);
+	return $count;
+}
