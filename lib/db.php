@@ -90,7 +90,7 @@ function utf8_str_split($str) {
  * @param <string> $str 
  * @return <string> 
  */ 
-function clearstr($str){ 
+function ClearStr($str){ 
         $sru = 'ёйцукенгшщзхъфывапролджэячсмитьбю'; 
         $s1 = array_merge(utf8_str_split($sru), utf8_str_split(strtoupper($sru)), range('A', 'Z'), range('a','z'), range('0', '9'), array('&',' ','#',';','%','?',':','(',')','-','_','=','+','[',']',',','.','/','\\')); 
         $codes = array(); 
