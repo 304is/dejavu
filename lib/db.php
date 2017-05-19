@@ -35,7 +35,7 @@ function fetchOne($sql){
     
         return false;
     } else {
-        $row = mysqli_fetch_array($res, MYSQLI_ASSOC))
+        $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
         
         return $row;
     }
