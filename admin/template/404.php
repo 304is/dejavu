@@ -48,7 +48,7 @@
 										<div class="error-actions">
 										<a href="#menu" class="btn btn-theme btn-lg"><span class="fa fa-bars"></span></a>
 										<a href="#" class="btn btn-theme-inverse btn-lg"><span class="fa fa-envelope-o"></span> Contact Support </a>
-										</div>
+											</div>
 										<div class="error-details"> Copyright &copy; 2013 Ziceinclude</div>
 								</div>
 						</div>

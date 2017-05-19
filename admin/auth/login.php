@@ -39,31 +39,25 @@
 						
 								<div class="account-wall">
 										<section class="align-lg-center">
-										<div class="site-logo"></div>
+										<div class="site-logo">
+											<p><img src="../../template/images/logo-big.png"></p>
+										</div>
+										<h1 class="login-title"><span>Вход</span><small> В админ-меню</small></h1>
 										</section>
 										<form id="form-signin" class="form-signin">
 												<section>
 														<div class="input-group">
 																<div class="input-group-addon"><i class="fa fa-user"></i></div>
-																<input  type="text" class="form-control" name="username" placeholder="Username">
+																<input  type="text" class="form-control" name="username" placeholder="Логин">
 														</div>
 														<div class="input-group">
 																<div class="input-group-addon"><i class="fa fa-key"></i></div>
-																<input type="password" class="form-control"  name="password" placeholder="Password">
+																<input type="password" class="form-control"  name="password" placeholder="Пароль">
 														</div>
-														<button class="btn btn-lg btn-theme-inverse btn-block" type="submit" id="sign-in">Sign in</button>
-												</section>
-												<section class="clearfix">
-														<div class="iCheck pull-left"  data-color="red">
-														<input type="checkbox" checked>
-														<label>Remember</label>
-														</div>
-														<a href="#" class="pull-right help">Forget Password? </a>
+														<button class="btn btn-lg btn-theme-inverse btn-block" type="submit" id="sign-in">Войти</button>
 												</section>		
-												<span class="or" data-text="Or"></span>
-												<button class="btn btn-lg  btn-inverse btn-block" type="button"> New account </button>
 										</form>
-										<a href="#" class="footer-link">&copy; 2014 ziceinclude &trade; </a>
+										<a href="#" class="footer-link">&copy; 304 ИС &trade; </a>
 								</div>	
 								<!-- //account-wall-->
 								

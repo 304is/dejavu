@@ -3491,7 +3491,7 @@ body.leftMenu #nav-scroll, body.leftMenu #mailbox #nav-scroll, #mailbox body.lef
   font-size: 12px;
   font-weight: 300;
   padding-top: 10px;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 .account-wall .form-signin {
   margin: 0 auto;
@@ -9399,10 +9399,13 @@ footer#site-footer article p {
   }
 }
 .site-logo {
-  background: url(../img/logo_.png) no-repeat center center;
   display: block;
-  height: 75px;
+  width: 100%;
   position: relative;
+  text-align: center;
+}
+.site-logo > p > img {
+  width: 135px;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
