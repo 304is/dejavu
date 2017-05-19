@@ -1,2 +1,3 @@
 # .htaccess для магазина
 AddDefaultCharset utf-8
+ErrorDocument 404 /admin/template/404.php
