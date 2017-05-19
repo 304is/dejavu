@@ -142,7 +142,7 @@ $(function() {
 					
 					// send username and password to php check login
 					$.ajax({
-						url: "data/checklogin.php", data: $(this).serialize(), type: "POST", dataType: 'json',
+						url: "checklogin.php", data: $(this).serialize(), type: "POST", dataType: 'json',
 						success: function (e) {
 								setTimeout(function () { main.removeClass("slideDown") }, !e.status ? 500:3000);
 								 if (!e.status) { 
@@ -151,10 +151,9 @@ $(function() {
 								 }
 								 setTimeout(function () { $("#loading-top span").text("Yes, account is access...") }, 500);
 								 setTimeout(function () { $("#loading-top span").text("Redirect to account page...")  }, 1500);
-								 setTimeout( "window.location.href='dashboard.html'", 3100 );
+								 setTimeout( "window.location.href='../main/index.php'", 3100 );
 						}
 					});	
-			
 			});
 	});
 </script>
