@@ -128,9 +128,7 @@ $(function() {
 			  throbber.start();
 			  
 			//Set note alert
-			setTimeout(function () { 
-				$.notific8('Hi Guest , you can use Username : <strong>demo</strong> and Password: <strong>demo</strong> to  access account.',{ sticky:true, horizontalEdge:"top", theme:"inverse" ,heading:"LOGIN DEMO"}) 
-				}, 1000);
+			
 	
 			
 			$("#form-signin").submit(function(event){

@@ -1290,13 +1290,13 @@ label span.icon i {
 
 .btn-theme-inverse {
   color: white;
-  background-color: #0aa699;
-  border-color: #0aa699;
+  background-color: #ab6a22;
+  border-color: #ab6a22;
 }
 .btn-theme-inverse:hover, .btn-theme-inverse:focus, .btn-theme-inverse:active, .btn-theme-inverse.active {
   color: white;
-  background-color: #088076;
-  border-color: #088076;
+  background-color: #7e480e;
+  border-color: #7e480e;
 }
 .open .btn-theme-inverse.dropdown-toggle {
   color: white;

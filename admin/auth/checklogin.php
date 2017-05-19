@@ -1,4 +1,5 @@
 <?php
+include_once("../../lib/db.php");
 if(isset($_POST["username"]) or isset($_POST["password"])){
 		sleep(1);
 		if($_POST["username"]=="demo" and $_POST["password"]=="demo"){ 
