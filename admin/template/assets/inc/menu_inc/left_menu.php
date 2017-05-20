@@ -9,7 +9,7 @@
 					</li>
 				<li><span><i class="icon  fa fa-list"></i> Категории товаров</span>
 					<ul>
-							<li><a href="#"><i class="icon  fa fa-plus"></i> Добавить категорию </a></li>
+							<li><a href="/admin/category/category_add.php"><i class="icon  fa fa-plus"></i> Добавить категорию </a></li>
 							<li><a href="/admin/category/index.php"><i class="icon  fa fa-th"></i> Просмотреть категории </a></li>
 					</ul>
 				</li>
