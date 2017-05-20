@@ -1,10 +1,4 @@
-<?php
-	$sql = "SELECT id,name
-		FROM category
-	";
-	$row = fetchAll($sql);
-	?>
-	<div class="table-responsive">
+<div class="table-responsive">
 		<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped">
 			<thead>
 					<tr>
@@ -12,15 +6,20 @@
 						<th>Название</th>
 					</tr>
 			</thead>
-	<? foreach ($row as $value) { ?>
+
 			<tbody align="center">
+			<? 
+$sql = "SELECT id,name FROM category ";			
+$row = fetchAll($sql);			
+			foreach ($row as $value){ ?>
 					<tr>
 						<td><?=$value["id"]?></td>
 						<td valign="middle"><?=$value["name"]?></td>
 					</tr>
+						<? };?>
 			</tbody>
 		
-	<?};?>
+
 	</table>
 		</div>
 	<?
