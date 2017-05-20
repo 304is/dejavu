@@ -1,3 +1,4 @@
+
 <div id="header">
 		
 				<div class="logo-area clearfix">
@@ -12,11 +13,11 @@
 						<ul class="nav navbar-nav navbar-right tooltip-area">
 								<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
-											<em><strong>Hi</strong>, Admin </em> <i class="dropdown-icon fa fa-angle-down"></i>
+											<em><strong>Привет</strong>,<?php echo 'Админ';?></em> <i class="dropdown-icon fa fa-angle-down"></i>
 										</a>
 										<ul class="dropdown-menu pull-right icon-right arrow">
-												<li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
-												<li><a href="#"><i class="fa fa-cog"></i> Setting </a></li>
+												<li><a href="#"><i class="fa fa-user"></i> Профиль</a></li>
+												<li><a href="#"><i class="fa fa-cog"></i> Настройка </a></li>
 												<li class="divider"></li>
 												<li><a href="../../lib/logout.php"> <i class="fa fa-sign-out"></i> Выход </a></li>
 										</ul>
