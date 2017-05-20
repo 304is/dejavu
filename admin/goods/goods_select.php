@@ -1,6 +1,6 @@
 <?php
 	$sql = "
-		SELECT  goods.id, goods.name AS goods_name, goods.date, goods.description, goods.price, category.category_name, goods.active
+		SELECT  goods.id, goods.name AS goods_name, goods.date, goods.description, goods.price, category.name AS category_name, goods.active
 		FROM goods
 		LEFT JOIN category
 		ON  category.id = goods.id_category
@@ -25,7 +25,7 @@
 			<tbody align="center">
 					<tr>
 						<td><?=$value["id"]?></td>
-						<td valign="middle"><?=$value["name"]?></td>
+						<td valign="middle"><?=$value["goods_name"]?></td>
 						<td><?=$value["date"]?></td>
 						<td><?=$value["description"]?></td>
 						<td><?=$value["price"]?></td>
