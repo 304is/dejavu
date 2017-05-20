@@ -12,14 +12,14 @@ include ("../template/header.php");
 			<div class="panel-body">
 				<form method="post" class="form-horizontal" data-collabel="3" data-alignlabel="left">
 					<div class="form-group">
-						<label class="control-label">Название:</label>
+						<label class="control-label">Название  категории:</label>
 						<div>
 							<input name="name" type="text" class="form-control" placeholder="Название">
 						</div>
 					</div>
 					
 					<div class="col-md-offset-3 col-md-9">
-						<center><button name="submit" type="submit" class="btn btn-theme">Submit</button></center>
+						<center><button name="submit" type="submit" class="btn btn-theme">Добавить</button></center>
 					</div>
 				</form>
 			</div>
