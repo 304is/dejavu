@@ -1,6 +1,6 @@
 <?php
 	$sql = "
-		SELECT  goods.id, goods.name, goods.date, goods.description, goods.price, category.category_name, goods.active
+		SELECT  goods.id, goods.name AS goods_name, goods.date, goods.description, goods.price, category.category_name, goods.active
 		FROM goods
 		LEFT JOIN category
 		ON  category.id = goods.id_category
