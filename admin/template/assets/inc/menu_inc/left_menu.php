@@ -3,7 +3,7 @@
 				<li><a href="/admin/main/index.php"><i class="icon  fa fa-home"></i> Главная </a></li>
 				<li><span><i class="icon  fa fa-th-large"></i> Товары</span>
 						<ul>
-								<li><a href="#"><i class="icon  fa fa-plus"></i> Добавить товар </a></li>
+								<li><a href="/admin/goods/goods_add.php"><i class="icon  fa fa-plus"></i> Добавить товар </a></li>
 								<li><a href="/admin/goods/index.php"><i class="icon  fa fa-th"></i> Просмотреть товары </a></li>
 						</ul>
 					</li>

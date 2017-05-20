@@ -26,7 +26,7 @@
 					<tr>
 						<td><?=$value["id"]?></td>
 						<td valign="middle"><?=$value["goods_name"]?></td>
-						<td><?=$value["date"]?></td>
+						<td><?=gmdate("d.m.Y", $value["date"])?></td>
 						<td><?=$value["description"]?></td>
 						<td><?=$value["price"]?></td>
 						<td><?=$value["category_name"]?></td>
