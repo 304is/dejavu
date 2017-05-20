@@ -4,7 +4,11 @@
 				<li><span><i class="icon  fa fa-th-large"></i> Товары</span>
 						<ul>
 								<li><a href="#"><i class="icon  fa fa-plus"></i> Добавить товар </a></li>
+<<<<<<< 20c4cac640de07634bb5da90a0070f97d290f3bb
 								<li><a href="/admin/goods/index.php"><i class="icon  fa fa-th"></i> Просмотреть товары </a></li>
+=======
+								<li><a href="http://praktika.local/admin/goods/index.php"><i class="icon  fa fa-th"></i> Просмотреть товары </a></li>
+>>>>>>> f4a9c223c9521039119ebf4a2f60e3db60163e81
 						</ul>
 					</li>
 				<li><span><i class="icon  fa fa-list"></i> Категории товаров</span>
