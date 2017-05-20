@@ -5,7 +5,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <!-- Title-->
+<<<<<<< 3a207749778781b432a794d2487275127c78c4b5
 <title>Deja Vu</title>
+=======
+<title>Авторизация</title>
+>>>>>>> 95c53c791bd77a353554565b097bd553c2d7f1e9
 <!-- Favicons -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../template/assets/ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../template/assets/ico/apple-touch-icon-114-precomposed.png">

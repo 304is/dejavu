@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
 <!-- Title-->
-<title>CAPLET |  Admin HTML Themes</title>
+<title>Админ меню</title>
 
 <!-- Favicons -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../template/assets/ico/apple-touch-icon-144-precomposed.png">
