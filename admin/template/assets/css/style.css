@@ -47,10 +47,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 a {
-  color: #098e83;
+  color: #1C1C1C;
 }
 a:hover {
-  color: #088379;
+  color: #8B8989;
   text-decoration: none;
 }
 a.toggle-column-hide {
@@ -85,7 +85,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 #header {
   background: white;
-  border-bottom: 5px #0aa699 solid;
+  border-bottom: 5px #AF6C22 solid;
   height: 55px;
   left: 0;
   position: absolute;
@@ -124,7 +124,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
   top: 19px;
 }
 #header .tools-bar a.icon-toolsbar {
-  color: #08897e;
+  color: #AF6C22;
   font-size: 21px;
   padding: 0 25px;
 }
