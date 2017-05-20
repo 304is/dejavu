@@ -48,9 +48,20 @@ $row = fetchAll($sql);
 									<?};
 								?>
 							</select>
-							<br>
-							<center><button name="submit" type="submit" class="btn btn-theme">Submit</button></center>
 						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3" style="text-align: left;">Наличие:</label>
+						<div class="col-md-9">
+							<select name="active" class="form-control">
+								<option value="1">Есть в наличии</option>
+								<option value="2">Нет в наличии</option>
+							</select>
+						</div>
+						<br>
+					</div>
+					<div class="col-md-offset-3 col-md-9">
+						<center><button name="submit" type="submit" class="btn btn-theme">Submit</button></center>
 					</div>
 				</form>
 			</div>
@@ -63,11 +74,13 @@ $goods_name = $_POST["goods_name"];
 $description = $_POST["description"];
 $price = $_POST["price"];
 $category = $_POST["category"];
+$active = $_POST["active"];
 if (isset ($_POST["submit"])) {
 	$sql = "
-		INSERT INTO goods(name, date, description, price, id_category)
-		VALUES ('$goods_name','$date','$description','$price','$category')
+		INSERT INTO goods(name, date, description, price, id_category, active)
+		VALUES ('$goods_name','$date','$description','$price','$category', '$active')
 	";
-	InsertRow($sql);
+	$message = InsertRow($sql);
+	echo "<center>Добавлена запись с номером " . $message . "</center>"; 
 }
 include ("../template/footer.php"); ?>
