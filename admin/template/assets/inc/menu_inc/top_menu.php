@@ -1,7 +1,7 @@
 <div id="header">
 		
 				<div class="logo-area clearfix">
-						<a href="#" class="logo"></a>
+						<a href="/admin/main/index.php" class="logo"></a>
 				</div>
 				<!-- //logo-area-->
 				
