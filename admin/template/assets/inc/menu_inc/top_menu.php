@@ -18,7 +18,7 @@
 												<li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
 												<li><a href="#"><i class="fa fa-cog"></i> Setting </a></li>
 												<li class="divider"></li>
-												<li><a href="#"><i class="fa fa-sign-out"></i> Signout </a></li>
+												<li><a href="../../lib/logout.php"> <i class="fa fa-sign-out"></i> Выход </a></li>
 										</ul>
 										<!-- //dropdown-menu-->
 								</li>
