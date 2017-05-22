@@ -1,5 +1,4 @@
 <?php
-include_once("../../lib/secure.php");
 include ("../template/header.php");
 include ("../template/footer.php"); 
 ?>
@@ -34,7 +33,7 @@ include ("../template/footer.php");
 						<td><?=gmdate("d.m.Y", $value["review.date"])?></td>
 						<td><?=$value["lastname"]?></td>
 						<td><?=$value["name"]?></td>
-						<td><?=$value["patronymic"]?></td>
+						<td><?=$value["patronymic"]?></td> 
 						<td><?=$value["review"]?></td>
 						<td>
 							<span class="tooltip-area">
