@@ -75,14 +75,20 @@ if (isset ($_GET['id'])) {
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3" style="text-align: left;">Наличие:</label>
-						<div class="col-md-9">
-							<select name="active" class="form-control">
-								<option value="1">Есть в наличии</option>
-								<option value="2">Нет в наличии</option>
-							</select>
-						</div>
-						<br>
+							<label class="control-label col-md-3" style="text-align: left;">Наличие</label>
+							<div class="col-md-9">
+									<div class="radio">
+											<label>
+													<input type="radio" name="action" id="optionsRadios1" value="1" checked="">
+													Есть в наличии</label>
+									</div>
+									<div class="radio">
+											<label>
+													<input type="radio" name="action" id="optionsRadios2" value="2">
+													Нет в наличии </label>
+									</div>
+									
+							</div>
 					</div>
 					<div class="col-md-offset-3 col-md-9">
 					<input name = "goods_id" type = "hidden" value = <?=$_GET['id']?>>
