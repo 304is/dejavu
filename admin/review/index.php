@@ -1,4 +1,6 @@
 <?php
+include_once("../../lib/secure.php");
+include_once("../../lib/db.php");
 include ("../template/header.php");
 include ("../template/footer.php"); 
 ?>

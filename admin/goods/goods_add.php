@@ -1,34 +1,33 @@
 <?php
+ob_start();
 include_once("../../lib/secure.php");
 include_once("../../lib/db.php");
 include ("../template/header.php");
-$update_name = "123";
-$update_date = "123";
+$update_name = "";
+$update_date = "";
 $update_description = "";
 $update_price = "";
 $update_category = "";
 $update_active = "";
-if (isset ($_GET['id'])) {
-	$sql = "
-		SELECT name, date, description, price, id_category ,active
-		FROM goods
-		WHERE id = {$_GET['id']}
-		
-	";
-	$row = fetchOne($sql);
-	$update_name = $row['name'];
-	$update_date = gmdate("d-m-Y", $row["date"]);
-	$update_description = $row['description'];
-	$update_price = $row['price'];
-	$update_category = $row['id'];
-	$update_active = $row['active'];
-	echo $update_date;
-} else {
 	$sql = "
 		SELECT *
 		FROM category
 	";
 	$row = fetchAll($sql);
+if (isset ($_GET['id'])) {
+	$sql = "
+		SELECT goods.name AS goods_name, goods.date, goods.description, goods.price, goods.id_category, goods.active
+		FROM goods
+		
+		WHERE goods.id = {$_GET['id']}
+	";
+	$value_row = fetchOne($sql);
+	$update_name = $value_row['goods_name'];
+	$update_date = gmdate("Y-m-d", $value_row["date"]);
+	$update_description = $value_row['description'];
+	$update_price = $value_row['price'];
+	$update_category = $value_row['id_category'];
+	$update_active = $value_row['active'];
 }
 ?>
 <!-- Здесь должен быть Ваш код -->
@@ -52,13 +51,13 @@ if (isset ($_GET['id'])) {
 					<div class="form-group">
 						<label class="control-label">Описание:</label>
 						<div>
-							<textarea name="description" class="form-control" placeholder="Введите текст..." rows="10"></textarea>
+							<textarea name="description" class="form-control" placeholder="Введите текст..." rows="10"><?=$update_description?></textarea>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label">Цена:</label>
 						<div>
-							<input name="price" type="text" class="form-control" placeholder="Цена">
+							<input name="price" type="text" class="form-control" placeholder="Цена" value = <?=$update_price?>>
 						</div>
 					</div>
 					<div class="form-group">
@@ -66,10 +65,12 @@ if (isset ($_GET['id'])) {
 						<div class="col-md-9">
 							<select name="category" class="form-control">
 								<? 
-									foreach ($row as $value) { ?>
+									foreach ($row as $value) {  if ($value['id'] == $update_category) {?>
+										 <option selected value = <?=$value['id']?> > <?=$value['name']?> </option> 
+										 <?php } else {?>
 										<option value = <?=$value['id']?> > <?=$value['name']?> </option>
-									<?};
-								?>
+									<? }
+									} ?>
 							</select>
 						</div>
 					</div>
@@ -106,6 +107,7 @@ if ( !empty($_POST['goods_id']) && isset($_POST['submit']) ) {
 		WHERE id = {$_GET['id']}
 	";
 	UpdateRow($sql);
+	header("Location: index.php");
 } else {
 	if (isset ($_POST["submit"])) {
 	$sql = "
@@ -117,4 +119,6 @@ if ( !empty($_POST['goods_id']) && isset($_POST['submit']) ) {
 };
 };
 
-include ("../template/footer.php"); ?>
+include ("../template/footer.php");
+ob_end_flush();
+?>
