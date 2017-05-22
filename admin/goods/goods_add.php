@@ -2,11 +2,20 @@
 include_once("../../lib/secure.php");
 include_once("../../lib/db.php");
 include ("../template/header.php");
-$sql = "
-	SELECT *
-	FROM category
-";
-$row = fetchAll($sql);
+if (isset ($_GET['id'])) {
+	$sql = "
+		SELECT *
+		FROM goods
+		WHERE id = {$_GET['id']}
+	";
+	$row = fetchOne($sql);
+} else {
+	$sql = "
+		SELECT *
+		FROM category
+	";
+	$row = fetchAll($sql);
+}
 ?>
 <!-- Здесь должен быть Ваш код -->
 <div class = "container">
@@ -61,7 +70,8 @@ $row = fetchAll($sql);
 						<br>
 					</div>
 					<div class="col-md-offset-3 col-md-9">
-						<center><button name="submit" type="submit" class="btn btn-theme">Submit</button></center>
+					<input name = "goods_id" type = "hidden" value = <?=$_GET['id']?>>
+						<center><button name="submit" type="submit" class="btn btn-theme">Добавить</button></center>
 					</div>
 				</form>
 			</div>
@@ -75,12 +85,22 @@ $description = $_POST["description"];
 $price = $_POST["price"];
 $category = $_POST["category"];
 $active = $_POST["active"];
-if (isset ($_POST["submit"])) {
+if ( !empty($_POST['goods_id']) && isset($_POST['submit']) ) {
+	$sql = "
+		UPDATE goods
+		SET name = '$goods_name', date = '$date', description = '$description', price = '$price', id_category = '$category', active = '$active'
+		WHERE id = {$_GET['id']}
+	";
+	UpdateRow($sql);
+} else {
+	if (isset ($_POST["submit"])) {
 	$sql = "
 		INSERT INTO goods(name, date, description, price, id_category, active)
 		VALUES ('$goods_name','$date','$description','$price','$category', '$active')
 	";
 	$message = InsertRow($sql);
 	echo "<center>Добавлена запись с номером " . $message . "</center>"; 
-}
+};
+};
+
 include ("../template/footer.php"); ?>
