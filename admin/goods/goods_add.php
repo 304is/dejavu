@@ -79,13 +79,15 @@ if (isset ($_GET['id'])) {
 							<div class="col-md-9">
 									<div class="radio">
 											<label>
-													<input type="radio" name="action" id="optionsRadios1" value="1" checked="">
-													Есть в наличии</label>
+												<input type="radio" name="active" value="1" checked="">
+												Есть в наличии
+												</label>
 									</div>
 									<div class="radio">
 											<label>
-													<input type="radio" name="action" id="optionsRadios2" value="2">
-													Нет в наличии </label>
+												<input type="radio" name="active" value="2">
+												Нет в наличии 
+											</label>
 									</div>
 									
 							</div>
@@ -106,6 +108,7 @@ $description = $_POST["description"];
 $price = $_POST["price"];
 $category = $_POST["category"];
 $active = $_POST["active"];
+echo $active;
 if ( !empty($_POST['goods_id']) && isset($_POST['submit']) ) {
 	$sql = "
 		UPDATE goods
