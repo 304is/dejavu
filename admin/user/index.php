@@ -2,7 +2,7 @@
 include_once("../../lib/secure.php");
 include_once("../../lib/db.php");
 include ("../template/header.php"); 
-$sql = 'SELECT surname, name, patronymic, login, `e-mail`, active FROM user';
+$sql = 'SELECT id, surname, name, patronymic, login, `e-mail`, active FROM user';
 $data = fetchAll($sql);
 ?>
 <section class="panel">
@@ -30,17 +30,18 @@ $data = fetchAll($sql);
 					foreach ($data as $col){
 						echo "<tr>";
 						echo "<td>".$num++."</td>";
-							echo "<td>".$col["surname"]."</td>";
-							echo "<td>".$col["name"]."</td>";
-							echo "<td>".$col["patronymic"]."</td>";
-							echo "<td>".$col["login"]."</td>";
-							echo "<td>".$col["e-mail"]."</td>";
-							if ($col["active"] == 1) echo '<td><span class="label label-success">&nbsp;</span></td>';
-							else echo '<td><span class="label label-danger">&nbsp;</span></td>';
+							echo "<td>".$col['surname']."</td>";
+							echo "<td>".$col['name']."</td>";
+							echo "<td>".$col['patronymic']."</td>";
+							echo "<td>".$col['login']."</td>";
+							echo "<td>".$col['e-mail']."</td>";
+							if ($col['active'] == 1) echo "<td><span class='label label-success'>&nbsp;</span></td>";
+							else echo "<td><span class='label label-danger'>&nbsp;</span></td>";
+							$id = $col['id'];
 							echo "<td>
 							<span class='tooltip-area'>
-							<a href='javascript:void(0)' class='btn btn-default btn-sm' title='Edit'><i class='fa fa-pencil'></i></a>
-							<a href='javascript:void(0)'  class='btn btn-default btn-sm' title='Delete'><i class='fa fa-trash-o'></i></a>
+							<a href='view.php?id=$id' class='btn btn-default btn-sm' title='Профиль'><i class='fa fa-user'></i></a>
+							<a href='javascript:void(0)'  class='btn btn-default btn-sm' title='Редактировать'><i class='fa fa-pencil'></i></a>
 							</span>
 							</td></tr>";
 					}
