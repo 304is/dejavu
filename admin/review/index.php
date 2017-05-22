@@ -1,12 +1,13 @@
 <?php
+<<<<<<< 2a24914e8cb263fce920db43bc2a2e36f09a6f29
 include_once("../../lib/secure.php");
 include_once("../../lib/db.php");
+=======
+include ("../../lib/db.php");
+>>>>>>> 4481b4611c3cb2c39b7a92135256c7db62f00b0e
 include ("../template/header.php");
-include ("../template/footer.php"); 
-?>
-<?php
 	$sql = "
-		SELECT  goods.id, goods.name AS goods_name, goods.date, user.lastname, user.name, user.patronymic, review.date, review.active
+		SELECT  goods.id, goods.name AS goods_name, goods.date, user.surname, user.name, user.patronymic, review.date, review.active, review.comments
 		FROM review
 		LEFT JOIN user
 		ON review.id_user = user.id
@@ -15,32 +16,39 @@ include ("../template/footer.php");
 	";
 	$row = fetchAll($sql);
 	?>
+
 	<div class="table-responsive">
 		<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped">
 			<thead>
 					<tr>
-						<th>No.</th>
-						<th>Товар</th>
-						<th>ФИО</th>
-						<th>Комментарии</th>
+						<th>№</th>
+						<th>Товар</th> 
 						<th>Дата</th>
+						<th>ФИО</th>
+						<th>Комментарий</th>
+						<th>Статус</th>
 						<th>Action</th>
 					</tr>
 			</thead>
-	<? foreach ($row as $value) { ?>
+	<? 
+	$i=0;
+	foreach ($row as $value) {
+	$i++;
+	?>
 			<tbody align="center">
 					<tr>
-						<td><?=$value["id"]?></td>
+						<td><?=$i;?></td>
 						<td valign="middle"><?=$value["goods_name"]?></td>
-						<td><?=gmdate("d.m.Y", $value["review.date"])?></td>
-						<td><?=$value["lastname"]?></td>
-						<td><?=$value["name"]?></td>
-						<td><?=$value["patronymic"]?></td> 
-						<td><?=$value["review"]?></td>
+						<td><?=gmdate("d.m.Y", $value["date"])?></td>
+						<td><?=$value["surname"]?><?=$value["name"]?><?=$value["patronymic"]?></td>
+						<td><?=$value["comments"]?></td>
+						<td><?php if ($value["active"]==1)
+						echo '<span class="label label-success">&nbsp;</span>';
+						else echo '<span class="label label-danger">&nbsp;</span>';
+						?></td>
 						<td>
 							<span class="tooltip-area">
 							<a href="javascript:void(0)" class="btn btn-default btn-sm" title="Edit"><i class="fa fa-pencil"></i></a>
-							<a href="javascript:void(0)"  class="btn btn-default btn-sm" title="Delete"><i class="fa fa-trash-o"></i></a>
 							</span>
 						</td>
 					</tr>
@@ -49,6 +57,7 @@ include ("../template/footer.php");
 	<?};?>
 	</table>
 		</div>
-	<?
 
+<?php
+include ("../template/footer.php"); 
 ?>
