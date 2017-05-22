@@ -2,13 +2,27 @@
 include_once("../../lib/secure.php");
 include_once("../../lib/db.php");
 include ("../template/header.php");
+$update_name = "123";
+$update_date = "123";
+$update_description = "";
+$update_price = "";
+$update_category = "";
+$update_active = "";
 if (isset ($_GET['id'])) {
 	$sql = "
-		SELECT *
+		SELECT name, date, description, price, id_category ,active
 		FROM goods
 		WHERE id = {$_GET['id']}
+		
 	";
 	$row = fetchOne($sql);
+	$update_name = $row['name'];
+	$update_date = gmdate("d-m-Y", $row["date"]);
+	$update_description = $row['description'];
+	$update_price = $row['price'];
+	$update_category = $row['id'];
+	$update_active = $row['active'];
+	echo $update_date;
 } else {
 	$sql = "
 		SELECT *
@@ -26,13 +40,13 @@ if (isset ($_GET['id'])) {
 					<div class="form-group">
 						<label class="control-label">Название:</label>
 						<div>
-							<input name="goods_name" type="text" class="form-control" placeholder="Название">
+							<input name="goods_name" type="text" class="form-control" placeholder="Название" value = <?=$update_name?> >
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label">Дата:</label>
 						<div>
-							<input name="date" type="date" class="form-control">
+							<input name="date" type="date" class="form-control" value = <?=$update_date?>>
 						</div>
 					</div>
 					<div class="form-group">
