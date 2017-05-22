@@ -1,10 +1,6 @@
 <?php
-<<<<<<< 2a24914e8cb263fce920db43bc2a2e36f09a6f29
 include_once("../../lib/secure.php");
 include_once("../../lib/db.php");
-=======
-include ("../../lib/db.php");
->>>>>>> 4481b4611c3cb2c39b7a92135256c7db62f00b0e
 include ("../template/header.php");
 	$sql = "
 		SELECT  goods.id, goods.name AS goods_name, goods.date, user.surname, user.name, user.patronymic, review.date, review.active, review.comments
