@@ -524,6 +524,7 @@ span.glyphicon.glyphicon-eye-open {
 	direction: rtl;
 	text-align: center;
 	float: left;
+    font-size: 25px;
 }
 .rating > span {
 	display: inline-block;
@@ -586,7 +587,7 @@ ul.rating li a:hover, .price_single a:hover, ul.size li a:hover {
   text-decoration: none;
 }
 .prices {
-    float: right;
+    margin-top: 15px;
 }
 .galry {
     margin-top: 1em;
@@ -3336,3 +3337,20 @@ h2 {
 }
 }
 /*--//responsive-design---*/
+.review > div > p {
+    font-size: 1em;
+    line-height: 1.8em;
+    color: #999;
+}
+.review > div > p > b {
+    color: black;
+    margin-right: 10px;
+    font-size: 17px;
+}
+.review > div {
+    margin-bottom: 15px;
+}
+.review > h1 {
+    margin: 10px;
+    font-size: 50px;
+}
