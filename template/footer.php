@@ -27,7 +27,7 @@
 						<li><a href="#"><font><font>Статус заказа</font></font></a></li>
 						<li><a href="#"><font><font>Доставка</font></font></a></li>
 						<li><a href="#"><font><font>Политика возврата</font></font></a></li>
-						<li><a href="#"><font><font>Digital Gift Card</font></font></a></li>
+						<li><a href="#"><font><font>Цифровая подарочная карта</font></font></a></li>
 					</ul>
 				</div>
 				<div class="col-md-2 footer-grid">
@@ -41,10 +41,10 @@
 				<div class="col-md-3 footer-grid icons">
 					<h4><font><font>Связаться с нами</font></font></h4>
 					<ul>
-						<li><a href="#"><img src="images/i1.png" alt=""><font><font>Следите за нами на Фейсбуке</font></font></a></li>
-						<li><a href="#"><img src="images/i2.png" alt=""><font><font>Следуйте за нами на Twitter</font></font></a></li>
-						<li><a href="#"><img src="images/i3.png" alt=""><font><font>Следуйте за нами на Google-плюс</font></font></a></li>
-						<li><a href="#"><img src="images/i4.png" alt=""><font><font>Следуйте за нами на Pinterest</font></font></a></li>
+						<li><a href="#"><img src="images/i1.png" alt=""><font><font>Мы в Facebook</font></font></a></li>
+						<li><a href="#"><img src="images/i2.png" alt=""><font><font>Читайте нас в Twitter</font></font></a></li>
+						<li><a href="#"><img src="images/i3.png" alt=""><font><font>Мы в Google+</font></font></a></li>
+						<li><a href="#"><img src="images/i4.png" alt=""><font><font>Мы в Pinterest</font></font></a></li>
 					</ul></div>
 				</div>
 				<div class="clearfix"></div>
