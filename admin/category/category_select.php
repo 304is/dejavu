@@ -18,8 +18,8 @@ $row = fetchAll($sql);
 						<td valign="middle"><?=$value["name"]?></td>
 						<td>
 							<span class="tooltip-area">
-							<a href="javascript:void(0)" class="btn btn-default btn-sm" title="редактировать"><i class="fa fa-pencil"></i></a>
-							<a href="javascript:void(0)"  class="btn btn-default btn-sm" title="Удалить"><i class="fa fa-trash-o"></i></a>
+							<a href="category_add.php?id=<?=$value['id']?>" class="btn btn-default btn-sm" title="Edit"><i class="fa fa-pencil"></i></a>
+							<a href="#"  class="btn btn-default btn-sm" title="Delete"><i class="fa fa-trash-o"></i></a>
 							</span>
 						</td>
 					</tr>
