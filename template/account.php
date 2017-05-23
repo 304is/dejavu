@@ -1,5 +1,15 @@
 <?$title='Deja Vu | Аккаунт '; ?>
-<?php require_once('header.php'); ?> 
+<?php 
+require_once('header.php'); 
+include_once("../lib/db.php");
+$surname = "";
+$name = "";
+$patronymic = "";
+$login = "";
+$email = "";
+$address = "";
+$telephone = "";
+?> 
 <!--account-->
 	<div class="account">
 		<div class="container">
@@ -8,31 +18,44 @@
 					<div class="register-top-grid">
 						<h3>Личная информация</h3>
 						<div class="input">
-							<span>ИМЯ<label>*</label></span>
-							<input type="text"> 
-						</div>
-						<div class="input">
 							<span>ФАМИЛИЯ<label>*</label></span>
-							<input type="text"> 
+							<input type="text" name="surname"> 
 						</div>
 						<div class="input">
-							<span>АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ<label>*</label></span>
-							<input type="text"> 
+							<span>ИМЯ<label>*</label></span>
+							<input type="text" name="name"> 
 						</div>
-						<a class="news-letter" href="#">
-							<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>ПОДПИСАТЬСЯ НА РАССЫЛКУ</label>
-						</a>
+						<div class="input">
+							<span>ОТЧЕСТВО<label>*</label></span>
+							<input type="text" name="patronymic"> 
+						</div>
+						<div class="input">
+							<span>ЭЛЕКТРОННАЯ ПОЧТА<label>*</label></span>
+							<input type="text" name="email"> 
+						</div>
+						<div class="input">
+							<span>АДРЕС<label>*</label></span>
+							<input type="text" name="email"> 
+						</div>
+						<div class="input">
+							<span>ТЕЛЕФОН<label>*</label></span>
+							<input type="text" name="email"> 
+						</div>
 						<div class="clearfix"> </div>
 					</div>
 				    <div class="register-bottom-grid">
-						<h3>Войти информация</h3>
+						<h3>Данные для входа</h3>
+						<div class="input">
+							<span>ЛОГИН<label>*</label></span>
+							<input type="text" name="login">
+						</div>
 						<div class="input">
 							<span>ПАРОЛЬ<label>*</label></span>
-							<input type="password">
+							<input type="password" name="password">
 						</div>
 						<div class="input">
 							<span>ПОДТВЕРЖДЕНИЕ ПАРОЛЯ<label>*</label></span>
-							<input type="password">
+							<input type="password" name="password">
 						 </div>
 					</div>
 				</form>
