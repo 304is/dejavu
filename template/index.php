@@ -17,18 +17,18 @@
 		<div class="container">
 			<div class="gallery-grids">
 				<div class="col-md-8 gallery-grid glry-one">
-					<a href="products.php"><img src="images/g1.jpg" class="img-responsive" alt=""/>
+					<a href="category.php"><img src="images/ВопперЛого.png" class="img-responsive" alt=""/>
 						<div class="gallery-info">
-							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
-							<a class="shop" href="single.php">SHOP NOW</a>
+							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Обзор</p>
+							<a class="shop" href="single.php">Купить сейчас</a>
 							<div class="clearfix"> </div>
 						</div>
 					</a>
 					<div class="galy-info">
-						<p>Lorem Ipsum is simply</p>
+						<p>Воппер</p>
 						<div class="galry">
 							<div class="prices">
-								<h5 class="item_price">$95.00</h5>
+								<h5 class="item_price">750.00тг</h5>
 							</div>
 							<div class="rating">
 								<span>☆</span>
