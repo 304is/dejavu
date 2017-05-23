@@ -1,11 +1,14 @@
+<?php
+include_once ("../lib/db.php");
+$row = fetchAll("SELECT id,name FROM category");
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <title><? echo $title ?></title>
-<!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- //Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
  <link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
@@ -65,49 +68,17 @@
 							<ul class="dropdown-menu multi-column columns-4">
 								<div class="row">
 									<div class="col-sm-3">
-										<h4>By Relation</h4>
 										<ul class="multi-column-dropdown">
-											<li><a class="list" href="products.php">Friend</a></li>
-											<li><a class="list" href="products.php">Lover</a></li>
-											<li><a class="list" href="products.php">Sister</a></li>
-											<li><a class="list" href="products.php">Brother</a></li>
-											<li><a class="list" href="products.php">Kids</a></li>
-											<li><a class="list" href="products.php">Parents</a></li>
-										</ul>
-									</div>																		
-									<div class="col-sm-3">
-										<h4>By Flavour</h4>
-										<ul class="multi-column-dropdown">
-											<li><a class="list" href="products.php">Chocolate</a></li>
-											<li><a class="list" href="products.php">Mixed Fruit</a></li>
-											<li><a class="list" href="products.php">Butterscotch</a></li>
-											<li><a class="list" href="products.php">Strawberry</a></li>
-											<li><a class="list" href="products.php">Vanilla</a></li>
-											<li><a class="list" href="products.php">Eggless Cakes</a></li>
-										</ul>
-									</div>
-									<div class="col-sm-3">
-										<h4>By Theme</h4>
-										<ul class="multi-column-dropdown">
-											<li><a class="list" href="products.php">Heart shaped</a></li>
-											<li><a class="list" href="products.php">Cartoon Cakes</a></li>
-											<li><a class="list" href="products.php">2-3 Tier Cakes</a></li>
-											<li><a class="list" href="products.php">Square shape</a></li>
-											<li><a class="list" href="products.php">Round shape</a></li>
-											<li><a class="list" href="products.php">Photo cakes</a></li>
-										</ul>
-									</div>
-									<div class="col-sm-3">
-										<h4>Weight</h4>
-										<ul class="multi-column-dropdown">
+										<? 
+	foreach ($row as $value) {
+	?>
 											<li><a class="list" href="products.php">1 kG</a></li>
-											<li><a class="list" href="products.php">1.5 kG</a></li>
-											<li><a class="list" href="products.php">2 kG</a></li>
-											<li><a class="list" href="products.php">3 kG</a></li>
-											<li><a class="list" href="products.php">4 kG</a></li>
-											<li><a class="list" href="products.php">Large</a></li>
+											<h4><li><a class="list" href="category.php?id=<?=$value["id"];?>"><?=$value["name"];?></a></li></h4>
+<?php
+}
+?>
 										</ul>
-									</div>
+									</div>																			
 								</div>
 							</ul>
 						</li>
