@@ -1,7 +1,8 @@
 <?php
 include_once ("../lib/db.php");
 $row = fetchAll("SELECT id,name FROM category");
-?>
+$rows = fetchAll("SELECT SUM(goods.price*basket.quantity) AS price_sum FROM `basket`
+LEFT JOIN goods ON goods.id=basket.id_goods");?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -122,7 +123,8 @@ $row = fetchAll("SELECT id,name FROM category");
 					<a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 					<div class="cart-box">
 						<h4><a href="checkout.php">
-							<span class="simpleCart_total"> 0.00 &#8376</span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>) 
+							<span class="simpleCart_total1"><?php foreach ($rows as $value) {
+                ?> <?=$value["price_sum"];?><?php };?>&#8376</span> 
 						</a></h4>
 						<p><a href="javascript:;" class="simpleCart_empty">Очистить корзину </a></p>
 						<div class="clearfix"> </div>
