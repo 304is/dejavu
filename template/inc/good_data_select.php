@@ -6,7 +6,7 @@ $sql = "
 	ON goods.id_category = category.id
 	WHERE goods.id = '4'
 ";
-$row = fetchOne($sql);
+$product_row = fetchOne($sql);
 $review_query = "
 	SELECT review.id, review.comments, review.date, CONCAT (user.name,' ', user.surname) AS username
 	FROM review
