@@ -10,7 +10,8 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
 			<h2><?=$cat["name"];?></h2>			
 			<div class="col-md-9 product-model-sec">
                 <?php
-                foreach ($row as $value) {
+                if ($row) {
+                    foreach ($row as $value) {
                 ?>           
 				<div class="product-grid">
 					<a href="single.php">				
@@ -37,6 +38,9 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
 					</div>
 				</div>
                 <?php
+                        }
+                    } else {
+                        echo "В данной категории нет пищи";
                     }
                 ?>
 			</div>	
