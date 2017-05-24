@@ -1,12 +1,11 @@
 <?php
 include_once ("../lib/db.php");
 $row = fetchAll("SELECT id,name FROM category");
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title><? echo $title ?></title>
+<title><?=$title; ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
@@ -69,14 +68,13 @@ $row = fetchAll("SELECT id,name FROM category");
 								<div class="row">
 									<div class="col-sm-3">
 										<ul class="multi-column-dropdown">
-										<? 
-	foreach ($row as $value) {
-	?>
-											<li><a class="list" href="products.php">1 kG</a></li>
+                                        <?php
+                                        foreach ($row as $value) {
+                                        ?>
 											<h4><li><a class="list" href="category.php?id=<?=$value["id"];?>"><?=$value["name"];?></a></li></h4>
-<?php
-}
-?>
+                                        <?php
+                                        }
+                                        ?>
 										</ul>
 									</div>																			
 								</div>

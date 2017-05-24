@@ -1,23 +1,17 @@
-<?ob_start();?>
-<?$title='Deja Vu | Продукты'; ?>
-<<<<<<< a2eeb00b2cdeebbf385d8986b0b31d5f3abfbdc8:template/products.php
 <?php 
-include_once("../lib/db.php");?>
-<?php require_once('header.php'); ?> 
-<!--products-->
-=======
-<?php require_once('header.php');
+$title='Deja Vu | Продукты';
+include_once("../lib/db.php");
+require_once('header.php'); 
 $row = fetchAll("SELECT id,name,price FROM goods where id_category=".$_GET["id"]);
 $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
  ?> 
->>>>>>> 28fedf0cf8a0cd6669626d158722410aa3b6c72a:template/category.php
 	<div class="products">	 
 		<div class="container">
 			<h2><?=$cat["name"];?></h2>			
 			<div class="col-md-9 product-model-sec">
-<<<<<<< a2eeb00b2cdeebbf385d8986b0b31d5f3abfbdc8:template/products.php
-<?include_once("products_select.php");?>
-=======
+                <?php
+                foreach ($row as $value) {
+                ?>           
 				<div class="product-grid">
 					<a href="single.php">				
 						<div class="more-product"><span> </span></div>						
@@ -32,17 +26,19 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
 					</a>				
 					<div class="product-info simpleCart_shelfItem">
 						<div class="product-info-cust prt_name">
-							<h4>Воппер</h4>								
-							<span class="item_price">750.00тг</span>
+							<h4><?=$value["name"];?></h4>								
+							<span class="item_price"><?=$value["price"];?></span>
 							<div class="ofr">
 							</div>
 							<input type="text" class="item_quantity" value="1" />
-							<input type="button" class="item_add items" value="Add">
+							<input type="button" class="item_add items" value="add">
 							<div class="clearfix"> </div>
 						</div>												
 					</div>
 				</div>
->>>>>>> 28fedf0cf8a0cd6669626d158722410aa3b6c72a:template/category.php
+                <?php
+                    }
+                ?>
 			</div>	
 			<div class="col-md-3 rsidebar span_1_of_left">
 				<section  class="sky-form">
@@ -236,4 +232,3 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
 	</div>
 	<!--//products-->
 <?php require_once('footer.php'); ?>
-<?ob_end_flush();?> 
