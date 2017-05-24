@@ -1,9 +1,12 @@
 <?php
+session_start();
+ob_start();
+$_SESSION["user"] = 1;
+$id = $_GET['id'];
 $title='Deja Vu | Одна страница'; 
 include_once("../lib/db.php");
 include_once("inc/good_data_select.php");
 require_once('header.php');
-
 ?> 
 <!--//single-page-->
 	<div class="single">
@@ -53,7 +56,6 @@ require_once('header.php');
 		</div>
 	</div>
 	<!--related-products-->
-	<div class="related-products">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -63,19 +65,43 @@ require_once('header.php');
                     if ($review_row) {
                         foreach ($review_row as $value) {
                 ?>
-						<div id="1">
+						<div id=<?=$value['id']?>>
 							<p><b><?=$value['username']?></b> <?=gmdate("Y-m-d", $value["date"])?></p>
 							<p><?=$value['comments']?></p>
 						</div>
-                    <?
-                        }
-                    } else {
-                        echo "Для данного товара пока нет отзывов";
-                    }
-                    ?>
+            <?
+                }
+            } else {
+                echo "Для данного товара пока нет отзывов";
+            }
+            	if (isset($_SESSION['user'])) {
+            ?>
+            <form method="post">
+            	<textarea type="text" name="comment" placeholder="Ваш комментарий..."></textarea>
+            	<br>
+            	<input type="submit" name="submit" value="Добавить">
+            </form>
+            <?} else {
+            			echo "Войдите чтобы оставлять комментарий.";
+            		};
+            ?>
 					</div>
 				</div>
 			</div>	
-		</div>
-	</div>  
-<?php require_once('footer.php'); ?> 
+		</div> 
+<?php require_once('footer.php');
+if (isset($_POST['submit'])) {
+	$id_user = $_SESSION['user'];
+	$id_goods = $id;
+	$comments  = $_POST['comment'];
+	$date = time();
+
+$comment_insert = "
+	INSERT INTO review(id_user, id_goods, comments, date)
+	VALUES ('$id_user', '$id_goods', '$comments', '$date')
+";
+InsertRow($comment_insert);
+header("Location: single.php");
+};
+ob_flush();
+?> 
