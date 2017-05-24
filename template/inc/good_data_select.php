@@ -4,7 +4,7 @@ $sql = "
 	FROM goods
 	LEFT JOIN category
 	ON goods.id_category = category.id
-	WHERE goods.id = $id
+	WHERE goods.id = '$id'
 ";
 $product_row = fetchOne($sql);
 $review_query = "
@@ -12,6 +12,6 @@ $review_query = "
 	FROM review
 	LEFT JOIN user
 	ON review.id_user = user.id
-	WHERE review.id_goods = $id
+	WHERE review.id_goods = '$id'
 ";
 $review_row = fetchAll($review_query);

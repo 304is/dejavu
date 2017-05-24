@@ -101,7 +101,7 @@ $comment_insert = "
 	VALUES ('$id_user', '$id_goods', '$comments', '$date')
 ";
 InsertRow($comment_insert);
-header("Location: single.php");
+header("Location: single.php?id=".$id);
 };
 ob_flush();
 ?> 
