@@ -68,13 +68,13 @@ $row = fetchAll("SELECT id,name FROM category");
 								<div class="row">
 									<div class="col-sm-3">
 										<ul class="multi-column-dropdown">
-                                        <?php
-                                        foreach ($row as $value) {
-                                        ?>
-											<h4><li><a class="list" href="category.php?id=<?=$value["id"];?>"><?=$value["name"];?></a></li></h4>
-                                        <?php
-                                        }
-                                        ?>
+                    <?php
+                    foreach ($row as $value) {
+                    ?>
+										<h4><li><a class="list" href="category.php?id=<?=$value["id"];?>"><?=$value["name"];?></a></li></h4>
+                    <?php
+                    }
+                    ?>
 										</ul>
 									</div>																			
 								</div>
