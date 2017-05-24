@@ -61,10 +61,10 @@ require_once('header.php');
 				<div class="col-md-12">
 					<div class="review">
 					<h1>Отзывы</h1>
-                <?php
-                    if ($review_row) {
-                        foreach ($review_row as $value) {
-                ?>
+          <?php
+              if ($review_row) {
+                  foreach ($review_row as $value) {
+          ?>
 						<div id=<?=$value['id']?>>
 							<p><b><?=$value['username']?></b> <?=gmdate("Y-m-d", $value["date"])?></p>
 							<p><?=$value['comments']?></p>
