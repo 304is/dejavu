@@ -28,11 +28,11 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
 					<div class="product-info simpleCart_shelfItem">
 						<div class="product-info-cust prt_name">
 							<h4><?=$value["name"];?></h4>								
-							<span class="item_price"><?=$value["price"];?></span>
+							<span class="item_price"><?=$value["price"];?> тг</span>
 							<div class="ofr">
 							</div>
 							<input type="text" class="item_quantity" value="1" />
-							<input type="button" class="item_add items" value="add">
+							<input type="button" class="item_add items" value="Добавить">
 							<div class="clearfix"> </div>
 						</div>												
 					</div>
