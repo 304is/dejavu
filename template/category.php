@@ -15,7 +15,7 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
                     foreach ($row as $value) {
                 ?>           
 				<div class="product-grid">
-					<a href="single.php">				
+					<a href="single.php?id=<?=$value["id"]?>">				
 						<div class="more-product"><span> </span></div>						
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
 							<img src="images/Воппер1.png" class="img-responsive" alt="">
