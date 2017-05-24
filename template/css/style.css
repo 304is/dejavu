@@ -3363,3 +3363,11 @@ h2 {
 .review > form > input {
     margin-bottom: 10px;
 }
+.valuation > form > p > select {
+    color: black;
+    margin-left: 20px;
+}
+.avgball {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

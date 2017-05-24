@@ -15,3 +15,9 @@ $review_query = "
 	WHERE review.id_goods = '$id'
 ";
 $review_row = fetchAll($review_query);
+$valuation_query = "
+	SELECT id
+	FROM valuation
+	WHERE id_goods = {$_GET['id']} AND id_user = {$_SESSION['user']}
+";
+$valuation_row = fetchOne($valuation_query);

@@ -1,7 +1,7 @@
 <?php
 session_start();
 ob_start();
-$_SESSION["user"] = 1;
+$_SESSION["user"] = 2;
 $id = $_GET['id'];
 $title='Deja Vu | Одна страница'; 
 include_once("../lib/db.php");
@@ -30,16 +30,27 @@ require_once('header.php');
 				<div class="col-md-8 single-grid simpleCart_shelfItem">		
 					<h3><?=$product_row['good_name']?></h3>
 					<p><?=$product_row['description']?></p>
-					<div class="galry">
-						<div class="rating">
-							<span>☆</span>
-							<span>☆</span>
-							<span>☆</span>
-							<span>☆</span>
-							<span>☆</span>
-						</div>
-						<div class="clearfix"></div>
+					<div class="avgball">
+						<p>Общая оценка товара: </p>
 					</div>
+					<?if ($valuation_row['id'] != $_SESSION['user']) {?>
+					<div class="valuation">
+						<form method="post">
+						<p>Оцените товар: 
+							<select name="raiting">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							</select>
+						</p>
+						</form>
+					</div>
+					<?} else {
+								echo '<p>Вы уже оценивали товар.</p>';
+							}
+					?>
 					<p class="qty"> Количество :  </p><input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
 					<div class="prices">
 						<h5 class="item_price"><?=$product_row['price']?> тг.</h5>
@@ -82,7 +93,7 @@ require_once('header.php');
             	<input type="submit" name="submit" value="Добавить">
             </form>
             <?} else {
-            			echo "Войдите чтобы оставлять комментарий.";
+            			echo "Войдите чтобы оставить комментарий.";
             		};
             ?>
 					</div>
