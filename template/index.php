@@ -5,7 +5,7 @@
 		<div class="container">
 			<h2 class="hdng">Ресторан <span>Deja Vu</span></h2>
 			<p>Добро пожаловать!</p>
-			<a href="products.php">НАЧАТЬ ПОКУПКИ</a>
+			<a href="category.php">НАЧАТЬ ПОКУПКИ</a>
 			<div class="banner-text">			
 				<img src="images/logo-big.png" alt="">	
 			</div>
@@ -42,7 +42,7 @@
 					</div>
 				</div>
 				<div class="col-md-4 gallery-grid glry-two">
-					<a href="products.php"><img src="images/g2.jpg" class="img-responsive" alt=""/>
+					<a href="category.php"><img src="images/g2.jpg" class="img-responsive" alt=""/>
 						<div class="gallery-info galrr-info-two">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
 							<a class="shop" href="single.php">SHOP NOW</a>
@@ -67,7 +67,7 @@
 					</div>
 				</div>
 				<div class="col-md-3 gallery-grid ">
-					<a href="products.php"><img src="images/g3.png" class="img-responsive" alt=""/>
+					<a href="category.php"><img src="images/g3.png" class="img-responsive" alt=""/>
 						<div class="gallery-info">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
 							<a class="shop" href="single.php">SHOP NOW</a>
@@ -92,7 +92,7 @@
 					</div>
 				</div>
 				<div class="col-md-3 gallery-grid ">
-					<a href="products.php"><img src="images/g4.png" class="img-responsive" alt=""/>
+					<a href="category.php"><img src="images/g4.png" class="img-responsive" alt=""/>
 						<div class="gallery-info">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
 							<a class="shop" href="single.php">SHOP NOW</a>
@@ -117,7 +117,7 @@
 					</div>
 				</div>
 				<div class="col-md-3 gallery-grid ">
-					<a href="products.php"><img src="images/g5.png" class="img-responsive" alt=""/>
+					<a href="category.php"><img src="images/g5.png" class="img-responsive" alt=""/>
 						<div class="gallery-info">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
 							<a class="shop" href="single.php">SHOP NOW</a>
@@ -142,7 +142,7 @@
 					</div>
 				</div>
 				<div class="col-md-3 gallery-grid ">
-					<a href="products.php"><img src="images/g6.png" class="img-responsive" alt=""/>
+					<a href="category.php"><img src="images/g6.png" class="img-responsive" alt=""/>
 						<div class="gallery-info">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
 							<a class="shop" href="single.php">SHOP NOW</a>
@@ -167,7 +167,7 @@
 					</div>
 				</div>
 				<div class="col-md-3 gallery-grid ">
-					<a href="products.php"><img src="images/g7.png" class="img-responsive" alt=""/>
+					<a href="category.php"><img src="images/g7.png" class="img-responsive" alt=""/>
 						<div class="gallery-info">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
 							<a class="shop" href="single.php">SHOP NOW</a>
@@ -192,7 +192,7 @@
 					</div>
 				</div>
 				<div class="col-md-3 gallery-grid ">
-					<a href="products.php"><img src="images/g8.png" class="img-responsive" alt=""/>
+					<a href="category.php"><img src="images/g8.png" class="img-responsive" alt=""/>
 						<div class="gallery-info">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
 							<a class="shop" href="single.php">SHOP NOW</a>
@@ -217,7 +217,7 @@
 					</div>
 				</div>
 				<div class="col-md-3 gallery-grid ">
-					<a href="products.php"><img src="images/g9.png" class="img-responsive" alt=""/>
+					<a href="category.php"><img src="images/g9.png" class="img-responsive" alt=""/>
 						<div class="gallery-info">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
 							<a class="shop" href="single.php">SHOP NOW</a>
@@ -242,7 +242,7 @@
 					</div>
 				</div>
 				<div class="col-md-3 gallery-grid ">
-					<a href="products.php"><img src="images/g10.png" class="img-responsive" alt=""/>
+					<a href="category.php"><img src="images/g10.png" class="img-responsive" alt=""/>
 						<div class="gallery-info">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
 							<a class="shop" href="single.php">SHOP NOW</a>
