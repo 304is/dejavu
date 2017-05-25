@@ -2,13 +2,6 @@
 <?php 
 require_once('header.php'); 
 include_once("../lib/db.php");
-$surname = "";
-$name = "";
-$patronymic = "";
-$login = "";
-$email = "";
-$address = "";
-$telephone = "";
 ?> 
 <!--account-->
 	<div class="account">
@@ -35,11 +28,11 @@ $telephone = "";
 						</div>
 						<div class="input">
 							<span>АДРЕС<label>*</label></span>
-							<input type="text" name="email"> 
+							<input type="text" name="adress"> 
 						</div>
 						<div class="input">
 							<span>ТЕЛЕФОН<label>*</label></span>
-							<input type="text" name="email"> 
+							<input type="text" name="telephone"> 
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -55,7 +48,7 @@ $telephone = "";
 						</div>
 						<div class="input">
 							<span>ПОДТВЕРЖДЕНИЕ ПАРОЛЯ<label>*</label></span>
-							<input type="password" name="password">
+							<input type="password" name="password_verify">
 						 </div>
 					</div>
 				</form>
@@ -70,4 +63,15 @@ $telephone = "";
 	    </div>
 	</div>
 	<!--//account-->
-<?php require_once('footer.php'); ?> 
+<?php 
+	require_once('footer.php');
+	$surname = $_POST['surname'];
+	$name = $_POST['name'];
+	$patronymic = $_POST['patronymic'];
+	$login = $_POST['login'];
+	$email = $_POST['email'];
+	$address = $_POST['address'];
+	$telephone = $_POST['telephone'];
+	$password = $_POST['password']
+	$password_verify = $_POST['password_verify']
+?>

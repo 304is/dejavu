@@ -2,6 +2,7 @@
 	session_start();
 	ob_start();
 	$_SESSION["user"] = 2;
+	$user = $_SESSION["user"];
 	$id = $_GET['id'];
 	$title='Deja Vu | Одна страница'; 
 	include_once("../lib/db.php");
@@ -92,7 +93,7 @@
             } else {
                 echo "Для данного товара пока нет отзывов";
             }
-            	if (isset($_SESSION['user'])) {
+            	if ($_SESSION['user']) {
             ?>
             <form method="post">
             	<textarea type="text" name="comment" placeholder="Ваш комментарий..."></textarea>

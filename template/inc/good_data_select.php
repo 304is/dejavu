@@ -18,7 +18,7 @@ $review_row = fetchAll($review_query);
 $valuation_query = "
 	SELECT id_user
 	FROM valuation
-	WHERE id_goods = {$_GET['id']} AND id_user = {$_SESSION['user']}
+	WHERE id_goods = {$_GET['id']} AND id_user = '$user'
 ";
 $valuation_row = fetchOne($valuation_query);
 $avg_ball="
