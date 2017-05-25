@@ -1,7 +1,11 @@
-<?$title='Deja Vu | Проверка '; 
+<?
+ob_start();
+$title='Deja Vu | Проверка '; 
 include_once ("../lib/db.php");
-$rowis = fetchAll("SELECT goods.name,goods.price,basket.quantity,basket.date FROM `basket`
+$rowis = fetchAll("SELECT basket.id,goods.name,goods.price,basket.quantity,basket.date FROM `basket`
 LEFT JOIN goods ON goods.id=basket.id_goods");?>
+
+
 <?php require_once('header.php'); ?> 
 <!--cart-items-->
 	<div class="cart-items">
@@ -12,10 +16,12 @@ LEFT JOIN goods ON goods.id=basket.id_goods");?>
                     } else {
                         echo "0";
                     }?> </h2>
-			<?php foreach ($rowis as $value) {
+			<?php 
+			if ($rowis) {
+			foreach ($rowis as $value) {
                 ?> 
 			<div class="cart-header">
-				<div class="close"><p><a href="javascript:;">Убрать </a></p> </div>
+				<div class="close"></div>
 				<div class="cart-sec simpleCart_shelfItem">
 					<div class="cart-item cyc">
 						 <img src="images/m1.png" class="img-responsive" alt="">
@@ -28,7 +34,19 @@ LEFT JOIN goods ON goods.id=basket.id_goods");?>
 						<div class="delivery">
 							<p>Стоимость : <?=$value["price"]*$value["quantity"];?>&#8376 (<?=$value["quantity"];?> шт)</p>
 							<span>Доставлен в <?=$value["date"];?></span>
-							<div class="clearfix"></div>
+							<form method="post">
+							<input name = "cart_id" type = "hidden" value = <?=$value["id"]?>>
+							<input name="submit" type="submit" class="item_add items" value="Убрать">
+							</form>
+						
+<?
+$cart_id = $_POST["cart_id"];
+if (isset ($_POST["submit"])) {
+$rowsql = fetchOne("DELETE FROM basket WHERE id='$cart_id'"); 
+	header("Location: ../template/checkout.php");
+};             
+?>                        
+ 
 
 						</div>	
 					</div>
@@ -36,8 +54,10 @@ LEFT JOIN goods ON goods.id=basket.id_goods");?>
 				</div>
 			</div>
 			<?php
-                        };
+                        }};
                 ?>
 	</div>
+	
 	<!--//checkout-->	
-<?php require_once('footer.php'); ?> 
+<?php require_once('footer.php'); 
+ob_end_flush();?>

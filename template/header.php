@@ -136,7 +136,7 @@ LEFT JOIN goods ON goods.id=basket.id_goods");?>
                         echo "0";
                     }?></span> 
 						</a></h4>
-						<p><a href="javascript:;" class="simpleCart_empty">Очистить корзину </a></p>
+						<p><a href="checkout.php" class="simpleCart_empty">Просмотреть корзину </a></p>
 						<div class="clearfix"> </div>
 					</div>
 				</div>
