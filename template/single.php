@@ -1,12 +1,12 @@
 <?php
-session_start();
-ob_start();
-$_SESSION["user"] = 2;
-$id = $_GET['id'];
-$title='Deja Vu | Одна страница'; 
-include_once("../lib/db.php");
-include_once("inc/good_data_select.php");
-require_once('header.php');
+	session_start();
+	ob_start();
+	$_SESSION["user"] = 2;
+	$id = $_GET['id'];
+	$title='Deja Vu | Одна страница'; 
+	include_once("../lib/db.php");
+	include_once("inc/good_data_select.php");
+	require_once('header.php');
 ?> 
 <!--//single-page-->
 	<div class="single">
@@ -31,9 +31,14 @@ require_once('header.php');
 					<h3><?=$product_row['good_name']?></h3>
 					<p><?=$product_row['description']?></p>
 					<div class="avgball">
-						<p>Общая оценка товара: </p>
+						<p>Общая оценка товара: <?=$valuation_ball['avgball']?></p>
 					</div>
-					<?if ($valuation_row['id'] != $_SESSION['user']) {?>
+					<?
+					if (!$_SESSION['user']) {
+						echo "Авторизируйтесь чтобы оценить товар.";
+					}
+					if ($valuation_row['id_user'] != $_SESSION['user']) {
+					?>
 					<div class="valuation">
 						<form method="post">
 						<p>Оцените товар: 
@@ -44,7 +49,9 @@ require_once('header.php');
 							<option value="4">4</option>
 							<option value="5">5</option>
 							</select>
+
 						</p>
+						<p><input type="submit" name="evaluate" value="Оценить"></p>
 						</form>
 					</div>
 					<?} else {
@@ -101,18 +108,29 @@ require_once('header.php');
 			</div>	
 		</div> 
 <?php require_once('footer.php');
+if (isset($_POST['evaluate'])){
+	$id_user_raiting = $_SESSION['user'];
+	$id_goods_raiting = $id;
+	$raiting  = $_POST['raiting'];
+	$date_raiting = time();
+	$raiting_insert="
+		INSERT INTO valuation(id_goods, id_user, ball, date)
+		VALUES ('$id_goods_raiting', '$id_user_raiting', '$raiting', '$date_raiting')
+	";
+	InsertRow($raiting_insert);
+	header("Location: single.php?id=".$id);
+}
 if (isset($_POST['submit'])) {
 	$id_user = $_SESSION['user'];
 	$id_goods = $id;
-	$comments  = $_POST['comment'];
+	$comments = $_POST['comment'];
 	$date = time();
-
-$comment_insert = "
-	INSERT INTO review(id_user, id_goods, comments, date)
-	VALUES ('$id_user', '$id_goods', '$comments', '$date')
-";
-InsertRow($comment_insert);
-header("Location: single.php?id=".$id);
+	$comment_insert = "
+		INSERT INTO review(id_user, id_goods, comments, date)
+		VALUES ('$id_user', '$id_goods', '$comments', '$date')
+	";
+	InsertRow($comment_insert);
+	header("Location: single.php?id=".$id);
 };
 ob_flush();
 ?> 

@@ -3367,6 +3367,9 @@ h2 {
     color: black;
     margin-left: 20px;
 }
+.valuation > form > p > input {
+    margin-top: 10px;
+}
 .avgball {
     margin-top: 20px;
     margin-bottom: 10px;
