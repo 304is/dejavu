@@ -1,6 +1,7 @@
 <?php
 include_once ("../lib/db.php");
 $row = fetchAll("SELECT id,name FROM category");
+$rowsed = fetchAll("SELECT COUNT(id) FROM `basket`");
 $rows = fetchAll("SELECT SUM(goods.price*basket.quantity) AS price_sum FROM `basket`
 LEFT JOIN goods ON goods.id=basket.id_goods");?>
 <!DOCTYPE html>
@@ -123,8 +124,17 @@ LEFT JOIN goods ON goods.id=basket.id_goods");?>
 					<a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 					<div class="cart-box">
 						<h4><a href="checkout.php">
-							<span class="simpleCart_total1"><?php foreach ($rows as $value) {
-                ?> <?=$value["price_sum"];?><?php };?>&#8376</span> 
+							<span class="simpleCart_total1"><?php  if ($rows) {
+                    foreach ($rows as $value) {
+                ?> <?=$value["price_sum"];?><?php  }
+                    } else {
+                        echo "0";
+                    }?>&#8376 <?php  if ($rowsed) {
+                    foreach ($rowsed as $value) {
+                ?> <?='('.$value["COUNT(id)"].')';?><?php  }
+                    } else {
+                        echo "0";
+                    }?></span> 
 						</a></h4>
 						<p><a href="javascript:;" class="simpleCart_empty">Очистить корзину </a></p>
 						<div class="clearfix"> </div>
