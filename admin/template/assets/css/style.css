@@ -8065,6 +8065,7 @@ footer#site-footer.fixed {
   z-index: 10;
   left: 0;
   right: 0;
+  height: 30px;
 }
 footer#site-footer section {
   font-size: 11px;
