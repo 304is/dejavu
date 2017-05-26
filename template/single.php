@@ -53,7 +53,7 @@
 						<p><input type="submit" name="evaluate" value="Оценить"></p>
 						</form>
 					</div>
-					<?} else {
+					<?} if ($_SESSION['user_id'] == $valuation_row['id_user']) {
 								echo '<p>Вы уже оценивали товар.</p>';
 							}
 					?>
