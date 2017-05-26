@@ -42,11 +42,7 @@
 $user_id = $_POST["user_id"];
 $goods_id = $_POST["goods_id"];
 $quantity = $_POST["quantity"];
-if (isset ($_POST["submit"])) {
-	$sql = "INSERT INTO `basket`(`id_user`, `id_goods`, `quantity`) VALUES ('$user_id','$goods_id','$quantity')";
-	InsertRow($sql);
-	header("Location: ../template/products.php");
-};
+
 ?>				
 				
 				
