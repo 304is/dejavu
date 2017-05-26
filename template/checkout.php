@@ -104,9 +104,10 @@ $rowsql = fetchOne("DELETE FROM basket WHERE id='$cart_id'");
 
 <?php 
 if (!empty($_POST['orders_name']) && isset ($_POST["orderssubmit"])) {
+$ordersuser_id = $_SESSION["user_id"];	
 $orders_name = $_POST["orders_name"];
 $orders_delivery = $_POST["orders_delivery"];
-	$sql = "INSERT INTO `orders`(`name`, `price`, `id_delivery`) VALUES ('$orders_name','$orders_price','$orders_delivery')";
+	$sql = "INSERT INTO `orders`(`name`, `price`, `id_delivery`,`id_user`) VALUES ('$orders_name','$orders_price','$orders_delivery','$ordersuser_id')";
 	$idOds = InsertRow($sql);
 	if ($rowis) {
 	foreach ($rowis as $value) {
