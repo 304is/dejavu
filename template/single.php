@@ -63,8 +63,6 @@
 					<div class="btn_form">
 					<form method="post">
 										<p class="qty"> Количество :  </p><input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
-
-							<input name = "user_id" type = "hidden" value="1">
 							<input name = "goods_id" type = "hidden" value = <?=$product_row["good_id"]?>>
 							<input name="cartsubmit" type="submit" class="item_add items" value="ДОБАВИТЬ В КОРЗИНУ">
 							</form>
@@ -136,8 +134,7 @@ if (isset($_POST['submit'])) {
 	InsertRow($comment_insert);
 	header("Location: single.php?id=".$id);
 };
-
-$user_id = $_POST["user_id"];
+$user_id = $_SESSION['user_id'];
 $goods_id = $_POST["goods_id"];
 $quantity = $_POST["quantity"];
 if (isset ($_POST["cartsubmit"])) {

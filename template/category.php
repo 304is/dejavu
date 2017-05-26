@@ -33,7 +33,7 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
 							<div class="ofr">
 							</div>
 								<form method="post">
-							<input name = "user_id" type = "hidden" value="1">
+							<input name = "user_id" type = "hidden" value=".">
 							<input name = "goods_id" type = "hidden" value = <?=$value["id"]?>>
 							<input name = "quantity" type="text" class="item_quantity" value="1" />
 							<input name="submit" type="submit" class="item_add items" value="В корзину">

@@ -2,8 +2,9 @@
 ob_start();
 $title='Deja Vu | Проверка '; 
 include_once ("../lib/db.php");
-$rowis = fetchAll("SELECT basket.id,goods.name,goods.price,basket.quantity,basket.date FROM `basket`
-LEFT JOIN goods ON goods.id=basket.id_goods");
+$user_id = $_SESSION['user_id'];
+$rowis = fetchAll("SELECT basket.id,basket.id_user,goods.id AS goods_id ,goods.name,goods.price,basket.quantity,basket.date FROM `basket`
+LEFT JOIN goods ON goods.id=basket.id_goods WHERE basket.id_user = '$user_id'");
 $rowdelivery = fetchAll("SELECT `id`, `name` FROM `delivery`");
 ?>
 
@@ -62,24 +63,57 @@ $rowsql = fetchOne("DELETE FROM basket WHERE id='$cart_id'");
 					
 				</div>
 			</div>
+			
 			<?php
                         }};
                 ?>
+			
 	<form method="post" class="form-inline">
+	
 	<label for="exampleInputdelivery1">Способ доставки: </label>
-							<select name="category"  id="exampleInputdelivery1" class="form-control">
+							<select name="orders_delivery"  id="exampleInputdelivery1" class="form-control">
 								<? 
 									foreach ($rowdelivery as $value) {  if ($value['id']) {?>
 										 <option selected value = <?=$value['id']?> > <?=$value['name']?> </option> 
 										 <?php } else {?>
 										<option value = <?=$value['id']?> > <?=$value['name']?> </option>
 									<? }
-									} ?>
+									}; ?>
 							</select>
-							<button type="submit"  name="orderssubmit" class="btn btn-info">Оформить заказ</button>
+								<?php 
+			if ($rowis) {
+				foreach ($rowis as $value) {					
+					$orders_price += $value["price"]*$value["quantity"];
+                }
+			}
+						
+                ?>
+												<button type="submit"  name="orderssubmit" class="btn btn-info">Оформить заказ</button>
+
+<?php 
+if (isset ($_POST["orderssubmit"])) {
+$orders_name = time();
+$orders_delivery = $_POST["orders_delivery"];
+	$sql = "INSERT INTO `orders`(`name`, `price`, `id_delivery`) VALUES ('$orders_name','$orders_price','$orders_delivery')";
+	$idOds = InsertRow($sql);
+	if ($rowis) {
+	foreach ($rowis as $value) {					
+		
+	}
+}
+	
+	
+	
+	
+	header("Location: ../template/checkout.php");
+};
+?>	
+			
 							</form>
+						
 	</div>
 	
-	<!--//checkout-->	
+	<!--//checkout-->
+	
 <?php require_once('footer.php'); 
 ob_end_flush();?>
