@@ -104,5 +104,4 @@ function ClearStr($str){
                 } 
         } 
         return $str; 
-} 
-?> 
+}

@@ -1,8 +1,7 @@
 <?php
 	session_start();
 	ob_start();
-	$_SESSION["user"] = 2;
-	$user = $_SESSION["user"];
+	$user = $_SESSION["user_id"];
 	$id = $_GET['id'];
 	$title='Deja Vu | Одна страница'; 
 	include_once("../lib/db.php");
@@ -35,10 +34,10 @@
 						<p>Общая оценка товара: <?=$valuation_ball['avgball']?></p>
 					</div>
 					<?
-					if (!$_SESSION['user']) {
+					if (!$_SESSION['user_id']) {
 						echo "Авторизируйтесь чтобы оценить товар.";
 					}
-					if ($valuation_row['id_user'] != $_SESSION['user']) {
+					if ($valuation_row['id_user'] != $_SESSION['user_id']) {
 					?>
 					<div class="valuation">
 						<form method="post">
@@ -90,7 +89,7 @@
                   foreach ($review_row as $value) {
           ?>
 						<div id=<?=$value['id']?>>
-							<p><b><?=$value['username']?></b> <?=gmdate("Y-m-d", $value["date"])?></p>
+							<p><b><?=$_SESSION['user_name']?></b> <?=gmdate("Y-m-d", $value["date"])?></p>
 							<p><?=$value['comments']?></p>
 						</div>
             <?
@@ -98,7 +97,7 @@
             } else {
                 echo "Для данного товара пока нет отзывов";
             }
-            	if ($_SESSION['user']) {
+            	if ($_SESSION['user_id']) {
             ?>
             <form method="post">
             	<textarea type="text" name="comment" placeholder="Ваш комментарий..."></textarea>
