@@ -1,10 +1,13 @@
 <?php
 session_start();
+$cartsuser_id = $_SESSION["user_id"];
+
 include_once ("../lib/db.php");
 $row = fetchAll("SELECT id,name FROM category");
-$rowsed = fetchAll("SELECT COUNT(id) FROM `basket`");
+$rowsed = fetchAll("SELECT COUNT(id) FROM `basket` WHERE id_user = '$cartsuser_id'");
 $rows = fetchAll("SELECT SUM(goods.price*basket.quantity) AS price_sum FROM `basket`
-LEFT JOIN goods ON goods.id=basket.id_goods");?>
+LEFT JOIN goods ON goods.id=basket.id_goods
+WHERE id_user = '$cartsuser_id'");?>
 <!DOCTYPE html>
 <html>
 <head>

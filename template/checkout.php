@@ -1,10 +1,13 @@
 <?
+session_start();
 ob_start();
+$cartuser_id = $_SESSION["user_id"];
 $title='Deja Vu | Проверка '; 
 include_once ("../lib/db.php");
-$user_id = $_SESSION['user_id'];
 $rowis = fetchAll("SELECT basket.id,basket.id_user,goods.id AS goods_id ,goods.name,goods.price,basket.quantity,basket.date FROM `basket`
-LEFT JOIN goods ON goods.id=basket.id_goods WHERE basket.id_user = '$user_id'");
+LEFT JOIN goods ON goods.id=basket.id_goods
+WHERE basket.id_user = '$cartuser_id'");
+$roworders = fetchAll("SELECT id AS orders_id,name AS orders_name FROM `orders`");
 $rowdelivery = fetchAll("SELECT `id`, `name` FROM `delivery`");
 ?>
 
@@ -67,17 +70,24 @@ $rowsql = fetchOne("DELETE FROM basket WHERE id='$cart_id'");
 			<?php
                         }};
                 ?>
-			
+			<? if (!$_SESSION['user_id']) {
+					}
+					if ($_SESSION['user_id']) {
+					?>
 	<form method="post" class="form-inline">
-	
+	<label for="exampleInputordername1">Название заказы:</label>
+										
+			<input name="orders_name" type="text"  id="exampleInputordername1" class="form-control" placeholder="Название" >
+				
+						
 	<label for="exampleInputdelivery1">Способ доставки: </label>
 							<select name="orders_delivery"  id="exampleInputdelivery1" class="form-control">
 								<? 
-									foreach ($rowdelivery as $value) {  if ($value['id']) {?>
+									if ($rowdelivery) { foreach ($rowdelivery as $value) {  if ($value['id']) {?>
 										 <option selected value = <?=$value['id']?> > <?=$value['name']?> </option> 
 										 <?php } else {?>
 										<option value = <?=$value['id']?> > <?=$value['name']?> </option>
-									<? }
+									<? }}
 									}; ?>
 							</select>
 								<?php 
@@ -88,24 +98,32 @@ $rowsql = fetchOne("DELETE FROM basket WHERE id='$cart_id'");
 			}
 						
                 ?>
-												<button type="submit"  name="orderssubmit" class="btn btn-info">Оформить заказ</button>
+				<button type="submit"  name="orderssubmit" class="btn btn-info">Оформить заказ</button>	
+			<? };?>
+				
 
 <?php 
-if (isset ($_POST["orderssubmit"])) {
-$orders_name = time();
+if (!empty($_POST['orders_name']) && isset ($_POST["orderssubmit"])) {
+$orders_name = $_POST["orders_name"];
 $orders_delivery = $_POST["orders_delivery"];
 	$sql = "INSERT INTO `orders`(`name`, `price`, `id_delivery`) VALUES ('$orders_name','$orders_price','$orders_delivery')";
 	$idOds = InsertRow($sql);
 	if ($rowis) {
-	foreach ($rowis as $value) {					
-		
-	}
+	foreach ($rowis as $value) {
+$contentuser_id = $_SESSION["user_id"];
+$content_goods_id = $value["id"];
+$content_price += $value["price"];
+$content_quantity += $value["quantity"];
 }
-	
-	
-	
-	
-	header("Location: ../template/checkout.php");
+}
+if ($roworders) {
+foreach ($roworders as $value){
+$content_orders_id = $value["orders_id"];
+}
+}
+$contentsql = "INSERT INTO `content`(`id_user`,`id_order`, `id_goods`,  `price`, `quantity`) VALUES ('$contentuser_id','$content_orders_id','$content_goods_id','$content_price','$content_quantity')";
+$idcontent = InsertRow($contentsql);	
+echo "<center>Спасибо за покупку! с номером " . $idcontent . "</center>"; 
 };
 ?>	
 			
