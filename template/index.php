@@ -1,6 +1,5 @@
 <?$title='Deja Vu | Главная'; ?>
-<?php require_once('header.php');
-echo $_SESSION['user'];?>
+<?php require_once('header.php');?>
 
 <!--banner-->
 	<div class="banner">
