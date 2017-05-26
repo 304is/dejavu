@@ -59,12 +59,17 @@
 								echo '<p>Вы уже оценивали товар.</p>';
 							}
 					?>
-					<p class="qty"> Количество :  </p><input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
 					<div class="prices">
 						<h5 class="item_price"><?=$product_row['price']?> тг.</h5>
 					</div>
 					<div class="btn_form">
-						<a href="#" class="add-cart item_add">ДОБАВИТЬ В КОРЗИНУ</a>	
+					<form method="post">
+										<p class="qty"> Количество :  </p><input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
+
+							<input name = "user_id" type = "hidden" value="1">
+							<input name = "goods_id" type = "hidden" value = <?=$product_row["good_id"]?>>
+							<input name="submit" type="submit" class="item_add items" value="ДОБАВИТЬ В КОРЗИНУ">
+							</form>
 					</div>
 					<div class="tag">
 						<p>Категория : <a href="#"><?=$product_row['category_name']?></a></p>
@@ -132,6 +137,15 @@ if (isset($_POST['submit'])) {
 	";
 	InsertRow($comment_insert);
 	header("Location: single.php?id=".$id);
+};
+
+$user_id = $_POST["user_id"];
+$goods_id = $_POST["goods_id"];
+$quantity = $_POST["quantity"];
+if (isset ($_POST["submit"])) {
+	$cart_insert = "INSERT INTO `basket`(`id_user`, `id_goods`, `quantity`) VALUES ('$user_id','$goods_id','$quantity')";
+	InsertRow($cart_insert);
+	header("Location: ../template/single.php?id={$_GET['id']}");
 };
 ob_flush();
 ?> 
