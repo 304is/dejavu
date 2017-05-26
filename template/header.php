@@ -9,12 +9,12 @@ LEFT JOIN goods ON goods.id=basket.id_goods");?>
 <html>
 <head>
 <title><?=$title; ?></title>
+<link rel="shortcut icon" href="images/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
- <link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
-
+<link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
