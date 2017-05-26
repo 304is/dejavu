@@ -102,17 +102,22 @@ LEFT JOIN goods ON goods.id=basket.id_goods");?>
 				<div class="header-right login">
 					<a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
 					<div id="loginBox">                
-						<form id="loginForm">
+						<form id="loginForm" method="post">
 							<fieldset id="body">
 								<fieldset>
-									<label for="email">Адрес электронной почты</label>
-									<input type="text" name="email" id="email">
+									<label for="email">Логин</label>
+									<input type="text" name="username" id="email">
 								</fieldset>
 								<fieldset>
 									<label for="password">Пароль</label>
 									<input type="password" name="password" id="password">
 								</fieldset>
+<<<<<<< Updated upstream
 								<input type="submit" id="login" value="Войти в систему">
+=======
+								<input type="login" id="login" value="Войти в систему
+">
+>>>>>>> Stashed changes
 								<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Запомни меня</i></label>
 							</fieldset>
 							<p>Новый пользователь? <a class="sign" href="account.php">Зарегистрироваться</a> <span><a href="#">Забыли пароль?</a></span></p>
