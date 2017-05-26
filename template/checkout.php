@@ -75,11 +75,6 @@ $rowsql = fetchOne("DELETE FROM basket WHERE id='$cart_id'");
 					if ($_SESSION['user_id']) {
 					?>
 	<form method="post" class="form-inline">
-	<label for="exampleInputordername1">Название заказы:</label>
-										
-			<input name="orders_name" type="text"  id="exampleInputordername1" class="form-control" placeholder="Название" >
-				
-						
 	<label for="exampleInputdelivery1">Способ доставки: </label>
 							<select name="orders_delivery"  id="exampleInputdelivery1" class="form-control">
 								<? 
@@ -103,9 +98,9 @@ $rowsql = fetchOne("DELETE FROM basket WHERE id='$cart_id'");
 				
 
 <?php 
-if (!empty($_POST['orders_name']) && isset ($_POST["orderssubmit"])) {
+if (isset ($_POST["orderssubmit"])) {
 $ordersuser_id = $_SESSION["user_id"];	
-$orders_name = $_POST["orders_name"];
+$orders_name = time();
 $orders_delivery = $_POST["orders_delivery"];
 	$sql = "INSERT INTO `orders`(`name`, `price`, `id_delivery`,`id_user`) VALUES ('$orders_name','$orders_price','$orders_delivery','$ordersuser_id')";
 	$idOds = InsertRow($sql);
