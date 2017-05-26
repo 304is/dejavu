@@ -108,7 +108,6 @@ $description = $_POST["description"];
 $price = $_POST["price"];
 $category = $_POST["category"];
 $active = $_POST["active"];
-echo $active;
 if ( !empty($_POST['goods_id']) && isset($_POST['submit']) ) {
 	$sql = "
 		UPDATE goods
