@@ -61,11 +61,17 @@
 						<h5 class="item_price"><?=$product_row['price']?> тг.</h5>
 					</div>
 					<div class="btn_form">
+					<? if (!$_SESSION['user_id']) {
+						echo "Авторизуйтесь, чтобы заказать товар.";
+					}
+					if ($_SESSION['user_id']) {
+					?>
 					<form method="post">
 										<p class="qty"> Количество :  </p><input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
 							<input name = "goods_id" type = "hidden" value = <?=$product_row["good_id"]?>>
 							<input name="cartsubmit" type="submit" class="item_add items" value="ДОБАВИТЬ В КОРЗИНУ">
 							</form>
+							<? };?>
 					</div>
 					<div class="tag">
 						<p>Категория : <a href="#"><?=$product_row['category_name']?></a></p>

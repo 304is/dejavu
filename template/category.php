@@ -1,5 +1,6 @@
 <?php 
 ob_start();
+session_start();
 $title='Deja Vu | Продукты';
 include_once("../lib/db.php");
 require_once('header.php'); 
@@ -32,12 +33,17 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
 							<span class="item_price"><?=$value["price"];?> тг</span>
 							<div class="ofr">
 							</div>
+							<? if (!$_SESSION['user_id']) {
+						echo "Авторизуйтесь, чтобы заказать товар.";
+					}
+					if ($_SESSION['user_id']) {
+					?>
 								<form method="post">
-							<input name = "user_id" type = "hidden" value=".">
 							<input name = "goods_id" type = "hidden" value = <?=$value["id"]?>>
 							<input name = "quantity" type="text" class="item_quantity" value="1" />
 							<input name="submit" type="submit" class="item_add items" value="В корзину">
 							</form>
+							<? };?>
 							<div class="clearfix"> </div>
 						</div>												
 					</div>
@@ -241,11 +247,11 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
 	</div>
 	<!--//products-->
 <?php 
-$user_id = $_POST["user_id"];
+$categoryuser_id = $_SESSION["user_id"];
 $goods_id = $_POST["goods_id"];
 $quantity = $_POST["quantity"];
 if (isset ($_POST["submit"])) {
-	$sql = "INSERT INTO `basket`(`id_user`, `id_goods`, `quantity`) VALUES ('$user_id','$goods_id','$quantity')";
+	$sql = "INSERT INTO `basket`(`id_user`, `id_goods`, `quantity`) VALUES ('$categoryuser_id','$goods_id','$quantity')";
 	InsertRow($sql);
 	header("Location: ../template/category.php?id={$_GET['id']}");
 };
