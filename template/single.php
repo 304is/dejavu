@@ -49,7 +49,6 @@
 							<option value="4">4</option>
 							<option value="5">5</option>
 							</select>
-
 						</p>
 						<p><input type="submit" name="evaluate" value="Оценить"></p>
 						</form>
@@ -89,7 +88,7 @@
                   foreach ($review_row as $value) {
           ?>
 						<div id=<?=$value['id']?>>
-							<p><b><?=$_SESSION['user_name']?></b> <?=gmdate("Y-m-d", $value["date"])?></p>
+							<p><b><?=$value['username']?></b> <?=gmdate("Y-m-d", $value["date"])?></p>
 							<p><?=$value['comments']?></p>
 						</div>
             <?
@@ -114,7 +113,7 @@
 		</div> 
 <?php require_once('footer.php');
 if (isset($_POST['evaluate'])){
-	$id_user_raiting = $_SESSION['user'];
+	$id_user_raiting = $_SESSION['user_id'];
 	$id_goods_raiting = $id;
 	$raiting  = $_POST['raiting'];
 	$date_raiting = time();
@@ -126,7 +125,7 @@ if (isset($_POST['evaluate'])){
 	header("Location: single.php?id=".$id);
 }
 if (isset($_POST['submit'])) {
-	$id_user = $_SESSION['user'];
+	$id_user = $_SESSION['user_id'];
 	$id_goods = $id;
 	$comments = $_POST['comment'];
 	$date = time();
