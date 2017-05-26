@@ -3,7 +3,9 @@ ob_start();
 $title='Deja Vu | Проверка '; 
 include_once ("../lib/db.php");
 $rowis = fetchAll("SELECT basket.id,goods.name,goods.price,basket.quantity,basket.date FROM `basket`
-LEFT JOIN goods ON goods.id=basket.id_goods");?>
+LEFT JOIN goods ON goods.id=basket.id_goods");
+$rowdelivery = fetchAll("SELECT `id`, `name` FROM `delivery`");
+?>
 
 
 <?php require_once('header.php'); ?> 
@@ -12,10 +14,16 @@ LEFT JOIN goods ON goods.id=basket.id_goods");?>
 		<div class="container">
 			<h2>Моя корзина <?php  if ($rowsed) {
                     foreach ($rowsed as $value) {
-                ?> (<?=$value["COUNT(id)"];?>)<?php  }
+                ?> <?='('.$value["COUNT(id)"].')';?><?php  }
                     } else {
                         echo "0";
-                    }?> </h2>
+                    }?>
+					Общая сумма:<?php  if ($rows) {
+                    foreach ($rows as $value) {
+                ?> <?=$value["price_sum"];?><?php  }
+                    } else {
+                        echo "0";
+                    }?>&#8376 </h2>
 			<?php 
 			if ($rowis) {
 			foreach ($rowis as $value) {
@@ -51,11 +59,25 @@ $rowsql = fetchOne("DELETE FROM basket WHERE id='$cart_id'");
 						</div>	
 					</div>
 					<div class="clearfix"></div>
+					
 				</div>
 			</div>
 			<?php
                         }};
                 ?>
+	<form method="post" class="form-inline">
+	<label for="exampleInputdelivery1">Способ доставки: </label>
+							<select name="category"  id="exampleInputdelivery1" class="form-control">
+								<? 
+									foreach ($rowdelivery as $value) {  if ($value['id']) {?>
+										 <option selected value = <?=$value['id']?> > <?=$value['name']?> </option> 
+										 <?php } else {?>
+										<option value = <?=$value['id']?> > <?=$value['name']?> </option>
+									<? }
+									} ?>
+							</select>
+							<button type="submit"  name="orderssubmit" class="btn btn-info">Оформить заказ</button>
+							</form>
 	</div>
 	
 	<!--//checkout-->	

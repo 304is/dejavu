@@ -68,7 +68,7 @@
 
 							<input name = "user_id" type = "hidden" value="1">
 							<input name = "goods_id" type = "hidden" value = <?=$product_row["good_id"]?>>
-							<input name="submit" type="submit" class="item_add items" value="ДОБАВИТЬ В КОРЗИНУ">
+							<input name="cartsubmit" type="submit" class="item_add items" value="ДОБАВИТЬ В КОРЗИНУ">
 							</form>
 					</div>
 					<div class="tag">
@@ -142,7 +142,7 @@ if (isset($_POST['submit'])) {
 $user_id = $_POST["user_id"];
 $goods_id = $_POST["goods_id"];
 $quantity = $_POST["quantity"];
-if (isset ($_POST["submit"])) {
+if (isset ($_POST["cartsubmit"])) {
 	$cart_insert = "INSERT INTO `basket`(`id_user`, `id_goods`, `quantity`) VALUES ('$user_id','$goods_id','$quantity')";
 	InsertRow($cart_insert);
 	header("Location: ../template/single.php?id={$_GET['id']}");
