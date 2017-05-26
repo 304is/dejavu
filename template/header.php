@@ -66,17 +66,17 @@ LEFT JOIN goods ON goods.id=basket.id_goods");?>
 						<li><a href="/" class="active">Главная</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Категория<b class="caret"></b></a>
-							<ul class="dropdown-menu multi-column columns-4">
+							<ul class="dropdown-menu">
 								<div class="row">
 									<div class="col-sm-3">
 										<ul class="multi-column-dropdown">
-                    <?php
-                    foreach ($row as $value) {
-                    ?>
-										<h4><li><a class="list" href="category.php?id=<?=$value["id"];?>"><?=$value["name"];?></a></li></h4>
-                    <?php
-                    }
-                    ?>
+											<?php
+											foreach ($row as $value) {
+											?>
+												<h4><li><a class="list" href="category.php?id=<?=$value["id"];?>"><?=$value["name"];?></a></li></h4>
+											<?php
+											}
+											?>
 										</ul>
 									</div>																			
 								</div>
@@ -112,8 +112,7 @@ LEFT JOIN goods ON goods.id=basket.id_goods");?>
 									<label for="password">Пароль</label>
 									<input type="password" name="password" id="password">
 								</fieldset>
-								<input type="submit" id="login" value="Войти в систему
-">
+								<input type="submit" id="login" value="Войти в систему">
 								<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Запомни меня</i></label>
 							</fieldset>
 							<p>Новый пользователь? <a class="sign" href="account.php">Зарегистрироваться</a> <span><a href="#">Забыли пароль?</a></span></p>
