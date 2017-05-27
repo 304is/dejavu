@@ -19,7 +19,7 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
 					<a href="single.php?id=<?=$value["id"]?>">				
 						<div class="more-product"><span> </span></div>						
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-							<img src="images/Воппер1.png" class="img-responsive" alt="">
+							<img src="images/m1.png" class="img-responsive" alt="">
 							<div class="b-wrapper">
 								<h4 class="b-animate b-from-left  b-delay03">							
 									<button>Обзор</button>
