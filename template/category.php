@@ -58,52 +58,55 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
 			<div class="col-md-3 rsidebar span_1_of_left">
 				<section  class="sky-form">
 					<div class="product_right">
-						<h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categories</h4>
+						<h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Категории</h4>
 						<div class="tab1">
 							<ul class="place">								
-								<li class="sort">Regular Cakes</li>
+								<li class="sort">Бургеры</li>
 								<li class="by"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></li>								
 							</ul>
 							<div class="clearfix"> </div>
 							<div class="single-bottom">						
-								<a href="#"><p>Cassata</p></a>
-								<a href="#"><p>Cheesecake</p></a>
-								<a href="#"><p>Coconut cake</p></a>
-								<a href="#"><p>Cupcake</p></a>
+								<a href="#"><p>Воппер</p></a>
+								<a href="#"><p>Чикенфри</p></a>
+								<a href="#"><p>БургерМакс</p></a>
+								<a href="#"><p>ЖирБургер</p></a>
 						    </div>
 					    </div>						  
 						<div class="tab2">
 							<ul class="place">								
-								<li class="sort">Special Cakes</li>
+								<li class="sort">Суши</li>
 								<li class="by"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></li>
 							</ul>
 							<div class="clearfix"> </div>
 							<div class="single-bottom">						
-								<a href="#"><p>Delicious Cakes</p></a>
-								<a href="#"><p>Gingerbread</p></a>									
+								<a href="#"><p>Роллы</p></a>
+								<a href="#"><p>Футомаки</p></a>
+								<a href="#"><p>Хосомаки</p></a>	
+								<a href="#"><p>Урамаки</p></a>	
 						    </div>
 					    </div>
 						<div class="tab3">
 							<ul class="place">								
-								<li class="sort">Eggless Cake</li>
+								<li class="sort">Пицца</li>
 								<li class="by"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></li>
 							</ul>
 							<div class="clearfix"> </div>
 							<div class="single-bottom">						
-								<a href="#"><p>Milk Cakes</p></a>
-								<a href="#"><p>Fruits Cakes</p></a>
+								<a href="#"><p>Маргарита</p></a>
+								<a href="#"><p>Итальяно</p></a>
+								<a href="#"><p>Пеперони</p></a>
 						    </div>
 					    </div>
 						<div class="tab4">
 							<ul class="place">								
-								<li class="sort">2-3 Tier Cakes</li>
+								<li class="sort">Напитки</li>
 								<li class="by"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></li>
 							</ul>
 							<div class="clearfix"> </div>
 							<div class="single-bottom">						
-								<a href="#"><p>Twist 4 tier</p></a>
-								<a href="#"><p>Floral Tier</p></a>
-								<a href="#"><p>Double Heartshape</p></a>
+								<a href="#"><p>Кола</p></a>
+								<a href="#"><p>Чай</p></a>
+								<a href="#"><p>Коктейль</p></a>
 						    </div>
 					    </div>
 						<!--script-->
@@ -156,24 +159,23 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
 					</div>
 				</section>
 				<section  class="sky-form">
-					<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>DISCOUNTS</h4>
+					<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Скидки</h4>
 					<div class="row row1 scroll-pane">
 						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Upto - 10% (20)</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>До - 10% </label>
 						</div>
 						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>70% - 60% (5)</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>50% - 40% (7)</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% (2)</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% (5)</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% (7)</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% (2)</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Other(50)</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>70% - 60% </label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>50% - 40% </label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% </label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5%  </label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% </label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% </label>
 						</div>
 					</div>
 				</section>  				 
 				<section  class="sky-form">
-					<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Price</h4>
+					<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Цена</h4>
 					<ul class="dropdown-menu1">
 						<li><a href="">								               
 							<div id="slider-range"></div>							
@@ -191,55 +193,15 @@ $cat = fetchOne("SELECT name FROM category where id=".$_GET["id"]);
 									min: 0,
 									max: 100000,
 									values: [ 500, 100000 ],
-									slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+									slide: function( event, ui ) {  $( "#amount" ).val( "₸" + ui.values[ 0 ] + " - ₸" + ui.values[ 1 ] );
 									}
 						 });
-						$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+						$( "#amount" ).val( "₸" + $( "#slider-range" ).slider( "values", 0 ) + " - ₸" + $( "#slider-range" ).slider( "values", 1 ) );
 
 						});//]]> 
 					</script>
 				<!---->
-				<section  class="sky-form">
-					<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>By Flavour</h4>
-					<div class="row row1 scroll-pane">
-						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Vanilla</label>			
-						</div>
-						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Chocolate</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Butterscotch</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Strawberry</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Black Forest</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Mixed Fruit</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Honey</label>
-						</div>
-					</div>
-				</section>
-				<section  class="sky-form">
-					<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Weight</h4>
-					<div class="row row1 scroll-pane">
-						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Half KG</label>
-						</div>		
-						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>One KG</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>TwO KG</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>More</label>
-						</div>
-					</div>
-				</section>	
-				<section  class="sky-form">
-					<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Color</h4>
-					<div class="row row1 scroll-pane">
-						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>White</label>
-						</div>
-						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Pink</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Gold</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Silver</label>
-						</div>
-					</div>
+				
 				</section>			 
 			</div>
 			<div class="clearfix"> </div>
