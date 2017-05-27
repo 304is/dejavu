@@ -6,7 +6,7 @@
 		<div class="container">
 			<h2 class="hdng">Ресторан <span>Deja Vu</span></h2>
 			<p>Добро пожаловать!</p>
-			<a href="category.php">НАЧАТЬ ПОКУПКИ</a>
+			<a href="category.php?id=1">НАЧАТЬ ПОКУПКИ</a>
 			<div class="banner-text">			
 				<img src="images/logo-big.png" alt="">	
 			</div>
