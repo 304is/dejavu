@@ -17,7 +17,7 @@
 				<li><span><i class="icon  fa fa-comment"></i> Отзывы</span>
 					<ul>
 							<li><a href="/admin/review/index.php"><i class="icon  fa fa-comment"></i> Комментарии </a></li>
-							<li><a href="/admin/review/valuation.php"><i class="icon  fa fa-star"></i> Оценки </a></li>
+							<li><a href="/admin/valuation/index.php"><i class="icon  fa fa-star"></i> Оценки </a></li>
 					</ul>
 				</li>
 				<li><a href="/admin/order/index.php"><i class="icon  fa fa-shopping-cart"></i> Заказы </a></li>
