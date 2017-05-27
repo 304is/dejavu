@@ -27,12 +27,18 @@
 							<div class="ofr">
 								<p class="disc"><?=$value["category_name"]?></p>
 							</div>
-							<form method="post">
+							<? if (!$_SESSION['user_id']) {
+						echo "Авторизуйтесь, чтобы заказать товар.";
+					}
+					if ($_SESSION['user_id']) {
+					?>
+							<form method="post" action="addcart.php">
 							<input name = "user_id" type = "hidden" value="1">
 							<input name = "goods_id" type = "hidden" value = <?=$value["id"]?>>
 							<input name = "quantity" type="text" class="item_quantity" value="1" />
 							<input name="submit" type="submit" class="item_add items" value="Добавить">
 							</form>
+							<? };?>
 							<div class="clearfix"> </div>
 						</div>												
 					</div>
