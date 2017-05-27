@@ -9449,3 +9449,10 @@ div.col5 {
   text-align: center;
   padding-top: 10%;
 }
+.sticker > p {
+  text-align: center;
+}
+.sticker > p > img {
+  margin-top: 20px ;
+  height: 200px;
+}
