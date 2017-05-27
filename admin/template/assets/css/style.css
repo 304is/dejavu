@@ -9445,3 +9445,7 @@ div.col4 {
 div.col5 {
   background: #1B1E24;
 }
+.greetings > h1 {
+  text-align: center;
+  padding-top: 10%;
+}

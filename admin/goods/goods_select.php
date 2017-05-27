@@ -18,7 +18,7 @@
 						<th>Цена</th>
 						<th>Категория</th>
 						<th>Активность</th>
-						<th>Action</th>
+						<th>Действия</th>
 					</tr>
 			</thead>
 	<? foreach ($row as $value) { ?>
@@ -40,7 +40,6 @@
 						<td>
 							<span class="tooltip-area">
 							<a href="goods_add.php?id=<?=$value['id']?>" class="btn btn-default btn-sm" title="Edit"><i class="fa fa-pencil"></i></a>
-							<a href="#"  class="btn btn-default btn-sm" title="Delete"><i class="fa fa-trash-o"></i></a>
 							</span>
 						</td>
 					</tr>
