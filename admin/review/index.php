@@ -3,7 +3,7 @@ include_once("../../lib/secure.php");
 include_once("../../lib/db.php");
 include ("../template/header.php");
 	$sql = "
-		SELECT  goods.id, goods.name AS goods_name, goods.date, user.surname, user.name, user.patronymic, review.date, review.active, review.comments
+		SELECT  goods.id, goods.name AS goods_name, goods.date, CONCAT (user.surname,' ', user.name,' ', user.patronymic) AS user_name, review.date, review.active, review.comments
 		FROM review
 		LEFT JOIN user
 		ON review.id_user = user.id
@@ -23,7 +23,6 @@ include ("../template/header.php");
 						<th>ФИО</th>
 						<th>Комментарий</th>
 						<th>Статус</th>
-						<th>Action</th>
 					</tr>
 			</thead>
 	<? 
@@ -36,17 +35,12 @@ include ("../template/header.php");
 						<td><?=$i;?></td>
 						<td valign="middle"><?=$value["goods_name"]?></td>
 						<td><?=gmdate("d.m.Y", $value["date"])?></td>
-						<td><?=$value["surname"]?><?=$value["name"]?><?=$value["patronymic"]?></td>
+						<td><?=$value["user_name"]?></td>
 						<td><?=$value["comments"]?></td>
 						<td><?php if ($value["active"]==1)
 						echo '<span class="label label-success">&nbsp;</span>';
 						else echo '<span class="label label-danger">&nbsp;</span>';
 						?></td>
-						<td>
-							<span class="tooltip-area">
-							<a href="javascript:void(0)" class="btn btn-default btn-sm" title="Edit"><i class="fa fa-pencil"></i></a>
-							</span>
-						</td>
 					</tr>
 			</tbody>
 		
